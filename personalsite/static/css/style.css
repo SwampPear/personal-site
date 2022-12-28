@@ -1,4 +1,229 @@
-html,
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+:root {
+    --cream: #fffdee;
+    --black: #1b1b1b;
+    --transition: .15s ease-in-out;
+}
+
 body {
-    margin: 0
+    margin: 0;
+    background-color: var(--cream);
+    padding: 8rem 25% 0 25%;
+}
+
+@keyframes body-to-dark {
+    from {background-color: var(--cream);}
+    to {background-color: var(--black);}
+}
+
+.body-to-dark {
+    animation-name: body-to-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes body-from-dark {
+    from {background-color: var(--black);}
+    to {background-color: var(--cream);}
+}
+
+.body-from-dark {
+    animation-name: body-from-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
+
+* {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+
+/* 
+Icon
+##################################################
+*/
+
+.icon {
+    position: fixed;
+    height: 50px;
+    top: 1.2rem;
+    left: .75rem;
+    fill: var(--black);
+}
+
+@keyframes icon-to-dark {
+    from {fill: var(--black);}
+    to {fill: var(--cream);}
+}
+
+.icon-to-dark {
+    animation-name: icon-to-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes icon-from-dark {
+    from {fill: var(--cream);}
+    to {fill: var(--black);}
+}
+
+.icon-from-dark {
+    animation-name: icon-from-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
+
+
+/* 
+Darkmode Button
+##################################################
+*/
+
+.darkmode {
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    top: 1rem;
+    right: .95rem;
+    border: none;
+    padding: 0;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.darkmode__svg {
+    fill: var(--black);
+    height: 50px;
+}
+
+@keyframes darkmode-to-dark {
+    from {fill: var(--black);}
+    to {fill: var(--cream);}
+}
+
+.darkmode-to-dark {
+    animation-name: darkmode-to-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes darkmode-from-dark {
+    from {fill: var(--cream);}
+    to {fill: var(--black);}
+}
+
+.darkmode-from-dark {
+    animation-name: darkmode-from-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
+
+
+/* 
+Navigation
+##################################################
+*/
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    transform: translate(-50%);
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    transition: var(--transition);
+}
+
+nav:hover {
+    transform: translate(0);
+    filter: blur(0);
+    -webkit-filter: blur(0);
+    
+}
+
+.nav__content {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.45rem;
+    justify-content: space-between;
+}
+
+.nav__link {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--black)
+}
+
+@keyframes nav-link-to-dark {
+    from {color: var(--black);}
+    to {color: var(--cream);}
+}
+
+.nav-link-to-dark {
+    animation-name: nav-link-to-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes nav-link-from-dark {
+    from {color: var(--cream);}
+    to {color: var(--black);}
+}
+
+.nav-link-from-dark {
+    animation-name: nav-link-from-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
+
+
+/* 
+Headers
+##################################################
+*/
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--black);
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--black);
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--black);
+}
+
+@keyframes header-to-dark {
+    from {color: var(--black);}
+    to {color: var(--cream);}
+}
+
+.header-to-dark {
+    animation-name: header-to-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes header-from-dark {
+    from {color: var(--cream);}
+    to {color: var(--black);}
+}
+
+.header-from-dark {
+    animation-name: header-from-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
 }

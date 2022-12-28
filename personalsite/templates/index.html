@@ -15,7 +15,127 @@
   </head>
 
   <body>
-    this is the index
+    {% include 'svg/baloon-heart.svg.html' %}
+    <button class="darkmode">
+        {% include 'svg/sun.svg.html' %}
+    </button>
+    <nav>
+        <div class="nav__content">
+            <a class="nav__link">Work</a>
+            <a class="nav__link">Posts</a>
+        </div>
+    </nav>
+    <div class="content">
+        <h1>Header</h1>
+        <h2>Header</h2>
+        <h3>Header</h3>
+    </div>
+    <script>
+        let dark = false
 
+        const body = document.querySelector('body')
+        const icon = document.querySelector('.icon')
+        const darkmode = document.querySelector('.darkmode__svg')
+        const navLinks = document.querySelectorAll('.nav__link')
+        const h1s = document.querySelectorAll('h1')
+        const h2s = document.querySelectorAll('h2')
+        const h3s = document.querySelectorAll('h3')
+
+        const darkmodeButton = document.querySelector('.darkmode')
+
+        const toDark = () => {
+            icon.classList.remove('icon-from-dark')
+            body.classList.remove('body-from-dark')
+            darkmode.classList.remove('darkmode-from-dark')
+            
+            navLinks.forEach((element) => {
+                element.classList.remove('nav-link-from-dark')
+            })
+
+            h1s.forEach((element) => {
+                element.classList.remove('header-from-dark')
+            })
+
+            h2s.forEach((element) => {
+                element.classList.remove('header-from-dark')
+            })
+
+            h3s.forEach((element) => {
+                element.classList.remove('header-from-dark')
+            })
+
+            icon.classList.add('icon-to-dark')
+            body.classList.add('body-to-dark')
+            darkmode.classList.add('darkmode-to-dark')
+
+            navLinks.forEach((element) => {
+                element.classList.add('nav-link-to-dark')
+            })
+
+            h1s.forEach((element) => {
+                element.classList.add('header-to-dark')
+            })
+
+            h2s.forEach((element) => {
+                element.classList.add('header-to-dark')
+            })
+
+            h3s.forEach((element) => {
+                element.classList.add('header-to-dark')
+            })
+        }
+
+        const fromDark = () => {
+            icon.classList.remove('icon-to-dark')
+            body.classList.remove('body-to-dark')
+            darkmode.classList.remove('darkmode-to-dark')
+            
+            navLinks.forEach((element) => {
+                element.classList.remove('nav-link-to-dark')
+            })
+
+            h1s.forEach((element) => {
+                element.classList.remove('header-to-dark')
+            })
+
+            h2s.forEach((element) => {
+                element.classList.remove('header-to-dark')
+            })
+
+            h3s.forEach((element) => {
+                element.classList.remove('header-to-dark')
+            })
+
+            icon.classList.add('icon-from-dark')
+            body.classList.add('body-from-dark')
+            darkmode.classList.add('darkmode-from-dark')
+
+            navLinks.forEach((element) => {
+                element.classList.add('nav-link-from-dark')
+            })
+
+            h1s.forEach((element) => {
+                element.classList.add('header-from-dark')
+            })
+
+            h2s.forEach((element) => {
+                element.classList.add('header-from-dark')
+            })
+
+            h3s.forEach((element) => {
+                element.classList.add('header-from-dark')
+            })
+        }
+
+        darkmodeButton.addEventListener('click', () => {
+            if (!dark) {
+                toDark()
+                dark = true
+            } else {
+                fromDark()
+                dark = false
+            }
+        })
+    </script>
   </body>
 </html>
