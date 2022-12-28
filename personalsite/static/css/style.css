@@ -3,7 +3,13 @@
 :root {
     --cream: #fffdee;
     --black: #1b1b1b;
+    --light-cream: rgba(253, 253, 249, 0.5);
+    --light-black: rgba(32, 32, 32, 0.5);
     --transition: .15s ease-in-out;
+}
+
+* {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 body {
@@ -34,8 +40,44 @@ body {
     animation-fill-mode: forwards; 
 }
 
-* {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+/* 
+Header
+##################################################
+*/
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100vw - 2rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    background-color: var(--light-cream);
+    backdrop-filter: blur(10px);
+}
+
+@keyframes header-to-dark {
+    from {background-color: var(--light-cream);}
+    to {background-color: var(--light-black);}
+}
+
+.header-to-dark {
+    animation-name: header-to-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes header-from-dark {
+    from {background-color: var(--light-black);}
+    to {background-color: var(--light-cream);}
+}
+
+.header-from-dark {
+    animation-name: header-from-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
 }
 
 
@@ -45,10 +87,7 @@ Icon
 */
 
 .icon {
-    position: fixed;
     height: 50px;
-    top: 1.2rem;
-    left: .75rem;
     fill: var(--black);
 }
 
@@ -81,11 +120,8 @@ Darkmode Button
 */
 
 .darkmode {
-    position: fixed;
     height: 50px;
     width: 50px;
-    top: 1rem;
-    right: .95rem;
     border: none;
     padding: 0;
     outline: none;
@@ -206,24 +242,24 @@ h3 {
     color: var(--black);
 }
 
-@keyframes header-to-dark {
+@keyframes headers-to-dark {
     from {color: var(--black);}
     to {color: var(--cream);}
 }
 
-.header-to-dark {
-    animation-name: header-to-dark;
+.headers-to-dark {
+    animation-name: headers-to-dark;
     animation-duration: .3s;
     animation-fill-mode: forwards; 
 }
 
-@keyframes header-from-dark {
+@keyframes headers-from-dark {
     from {color: var(--cream);}
     to {color: var(--black);}
 }
 
-.header-from-dark {
-    animation-name: header-from-dark;
+.headers-from-dark {
+    animation-name: headers-from-dark;
     animation-duration: .3s;
     animation-fill-mode: forwards; 
 }
