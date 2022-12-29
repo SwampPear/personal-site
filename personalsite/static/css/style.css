@@ -15,7 +15,7 @@
 body {
     margin: 0;
     background-color: var(--cream);
-    padding: 8rem 25% 0 25%;
+    padding: 7rem 25% 0 25%;
 }
 
 @keyframes body-to-dark {
@@ -45,15 +45,15 @@ Header
 ##################################################
 */
 
-.header {
+header {
     position: fixed;
     top: 0;
     left: 0;
-    width: calc(100vw - 2rem);
+    width: calc(100vw - 1.5rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem;
+    padding: .75rem;
     background-color: var(--light-cream);
     backdrop-filter: blur(10px);
 }
@@ -82,12 +82,17 @@ Header
 
 
 /* 
-Icon
+Icon and Title
 ##################################################
 */
 
+.header__title {
+    display: flex;
+    align-items: center;
+}
+
 .icon {
-    height: 50px;
+    height: 40px;
     fill: var(--black);
 }
 
@@ -113,6 +118,35 @@ Icon
     animation-fill-mode: forwards; 
 }
 
+.title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: var(--black);
+    margin-left: 1rem;
+}
+
+@keyframes title-to-dark {
+    from {color: var(--black);}
+    to {color: var(--cream);}
+}
+
+.title-to-dark {
+    animation-name: title-to-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes title-from-dark {
+    from {color: var(--cream);}
+    to {color: var(--black);}
+}
+
+.icon-from-dark {
+    animation-name: icon-from-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
+
 
 /* 
 Darkmode Button
@@ -120,8 +154,8 @@ Darkmode Button
 */
 
 .darkmode {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     border: none;
     padding: 0;
     outline: none;
@@ -131,7 +165,7 @@ Darkmode Button
 
 .darkmode__svg {
     fill: var(--black);
-    height: 50px;
+    height: 40px;
 }
 
 @keyframes darkmode-to-dark {
@@ -180,7 +214,6 @@ nav:hover {
     transform: translate(0);
     filter: blur(0);
     -webkit-filter: blur(0);
-    
 }
 
 .nav__content {
@@ -223,7 +256,7 @@ nav:hover {
 
 
 /* 
-Headers
+Text Elements
 ##################################################
 */
 
@@ -262,4 +295,15 @@ h3 {
     animation-name: headers-from-dark;
     animation-duration: .3s;
     animation-fill-mode: forwards; 
+}
+
+
+/* 
+Graphics
+##################################################
+*/
+
+.graphics {
+    width: 100%;
+    height: 50vh;
 }
