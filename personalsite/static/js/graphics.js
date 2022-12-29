@@ -188,6 +188,8 @@ float pnoise(vec3 P, vec3 rep)
 varying vec2 vUv;
 varying float noise;
 uniform float time;
+uniform float mouseY;
+uniform float mouseX;
 
 float turbulence( vec3 p ) {
 
@@ -208,8 +210,8 @@ void main() {
 vUv = uv;
 
   // add time to the noise parameters so it's animated
-  noise = 10.0 *  -.10 * turbulence( .5 * normal + time );
-  float b = 5.0 * pnoise( 0.05 * position + vec3( 2.0 * time ), vec3( 100.0 ) );
+  noise = (mouseX / 10.0) *  -.10 * turbulence( .5 * normal + time );
+  float b = (mouseY / 100.0) * pnoise( 0.05 * position + vec3( 2.0 * time ), vec3( 100.0 ) );
   float displacement = - noise + b;
 
   vec3 newPosition = position + normal * displacement;
@@ -243,6 +245,14 @@ const material = new THREE.ShaderMaterial( {
       time: { // float initialized to 0
         type: "f",
         value: 0.0
+      },
+      mouseY: {
+        type: 'f',
+        value: 0.0
+      },
+      mouseX: {
+        type: 'f',
+        value: 0.0
       }
     },
     vertexShader: vertexShader,
@@ -250,7 +260,7 @@ const material = new THREE.ShaderMaterial( {
 });
 
 const mesh = new THREE.Mesh(
-    new THREE.IcosahedronGeometry(30, 30),
+    new THREE.IcosahedronGeometry(35, 40),
     material
 )
 scene.add(mesh)
@@ -260,9 +270,15 @@ camera.position.z = 100
 const animate = () => {
     requestAnimationFrame(animate)
 
-    material.uniforms['time'].value = .000125 * (Date.now() - start);
+    material.uniforms['time'].value = .000125 * (Date.now() - start)
+    
 
     renderer.render(scene, camera)
 }
 
 animate()
+
+addEventListener('mousemove', (event) => {
+    material.uniforms['mouseX'].value = event.screenX
+    material.uniforms['mouseY'].value = event.screenY
+});
