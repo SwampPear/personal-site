@@ -29,33 +29,13 @@
         <div class="nav__content">
             <a class="nav__link">Work</a>
             <a class="nav__link">Posts</a>
+            <a class="nav__link">Contact</a>
         </div>
     </nav>
     <section>
-        <div class="graphics"></div>
-        <h1>Header</h1>
-        <h2>Header</h2>
-        <h3>Header</h3>
-        <h1>Header</h1>
-        <h2>Header</h2>
-        <h3>Header</h3>
-        <h1>Header</h1>
-        <h2>Header</h2>
-        <h3>Header</h3>
-        <h1>Header</h1>
-        <h2>Header</h2>
-        <h3>Header</h3>
-        <h1>Header</h1>
-        <h2>Header</h2>
-        <h3>Header</h3>
-        <h1>Header</h1>
-        <h2>Header</h2>
-        <h3>Header</h3>
-        <h1>Header</h1>
-        <h2>Header</h2>
-        <h3>Header</h3>
+        {% block content %}
+        {% endblock %}
     </section>
     <script src="{% static 'js/main.js' %}"></script>
-    <script type="module" src="{% static 'js/graphics.js' %}"></script>
   </body>
 </html>
