@@ -4,8 +4,10 @@
     --cream: #fffdee;
     --black: #1b1b1b;
     --blue: #99dbff;
+    --dark-blue: #79c0e5;
     --pink: #ed45ff;
     --gradient: linear-gradient(-45deg, var(--pink), var(--blue));
+    --gradient-2: linear-gradient(-45deg, #f7b1ff, #aae1ff);
     --transluscent-cream: rgba(255, 253, 238, .5);
     --transluscent-black: rgba(27, 27, 27, .5);
     --transition: .15s ease-in-out;
@@ -279,30 +281,32 @@ h3 {
     color: var(--black);
 }
 
-@keyframes headers-to-dark {
+p {
+    font-size: 1.5rem;
+    color: var(--black);
+    tab-size: 8;
+}
+
+@keyframes text-to-dark {
     from {color: var(--black);}
     to {color: var(--cream);}
 }
 
-.headers-to-dark {
-    animation-name: headers-to-dark;
+.text-to-dark {
+    animation-name: text-to-dark;
     animation-duration: .3s;
     animation-fill-mode: forwards; 
 }
 
-@keyframes headers-from-dark {
+@keyframes text-from-dark {
     from {color: var(--cream);}
     to {color: var(--black);}
 }
 
-.headers-from-dark {
-    animation-name: headers-from-dark;
+.text-from-dark {
+    animation-name: text-from-dark;
     animation-duration: .3s;
     animation-fill-mode: forwards; 
-}
-
-.gradient-header {
-    
 }
 
 
@@ -319,6 +323,17 @@ Graphics
     height: 100vh;
 }
 
+.graphics__overlay {
+    position: absolute;
+    top: 85vh;
+    left: 0;
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 /* 
 Content
@@ -329,7 +344,7 @@ Content
     position: absolute;
     top: 100vh;
     left: 0;
-    width: 100vw;
+    width: 50vw;
     height: 100vh;
     padding: 0 25%;
 }
@@ -340,11 +355,30 @@ Divider
 */
 
 hr {
-    width: 50%;
+    width: 75%;
     height: 10px;
     border: none;
     border-radius: 5px;
     background: var(--gradient);
     margin: 0;
+}
+
+
+/* 
+Link Button
+##################################################
+*/
+
+.button__link {
+    background-color: var(--blue);
+    padding: .75rem;
+    transition: var(--transition);
+    border-radius: 1rem;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.button__link:hover {
+    background-color: var(--dark-blue);
 }
 

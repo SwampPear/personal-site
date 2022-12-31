@@ -9,6 +9,7 @@ const navLinks = document.querySelectorAll('.nav__link')
 const h1s = document.querySelectorAll('h1')
 const h2s = document.querySelectorAll('h2')
 const h3s = document.querySelectorAll('h3')
+const ps = document.querySelectorAll('p')
 
 const darkmodeButton = document.querySelector('.darkmode')
 
@@ -24,15 +25,19 @@ const toDark = () => {
     })
 
     h1s.forEach((element) => {
-        element.classList.remove('headers-from-dark')
+        element.classList.remove('text-from-dark')
     })
 
     h2s.forEach((element) => {
-        element.classList.remove('headers-from-dark')
+        element.classList.remove('text-from-dark')
     })
 
     h3s.forEach((element) => {
-        element.classList.remove('headers-from-dark')
+        element.classList.remove('text-from-dark')
+    })
+
+    ps.forEach((element) => {
+        element.classList.remove('text-from-dark')
     })
 
     icon.classList.add('icon-to-dark')
@@ -46,15 +51,19 @@ const toDark = () => {
     })
 
     h1s.forEach((element) => {
-        element.classList.add('headers-to-dark')
+        element.classList.add('text-to-dark')
     })
 
     h2s.forEach((element) => {
-        element.classList.add('headers-to-dark')
+        element.classList.add('text-to-dark')
     })
 
     h3s.forEach((element) => {
-        element.classList.add('headers-to-dark')
+        element.classList.add('text-to-dark')
+    })
+
+    ps.forEach((element) => {
+        element.classList.add('text-to-dark')
     })
 }
 
@@ -70,15 +79,19 @@ const fromDark = () => {
     })
 
     h1s.forEach((element) => {
-        element.classList.remove('headers-to-dark')
+        element.classList.remove('text-to-dark')
     })
 
     h2s.forEach((element) => {
-        element.classList.remove('headers-to-dark')
+        element.classList.remove('text-to-dark')
     })
 
     h3s.forEach((element) => {
-        element.classList.remove('headers-to-dark')
+        element.classList.remove('text-to-dark')
+    })
+
+    ps.forEach((element) => {
+        element.classList.remove('text-to-dark')
     })
 
     icon.classList.add('icon-from-dark')
@@ -92,15 +105,19 @@ const fromDark = () => {
     })
 
     h1s.forEach((element) => {
-        element.classList.add('headers-from-dark')
+        element.classList.add('text-from-dark')
     })
 
     h2s.forEach((element) => {
-        element.classList.add('headers-from-dark')
+        element.classList.add('text-from-dark')
     })
 
     h3s.forEach((element) => {
-        element.classList.add('headers-from-dark')
+        element.classList.add('text-from-dark')
+    })
+
+    ps.forEach((element) => {
+        element.classList.add('text-from-dark')
     })
 }
 
