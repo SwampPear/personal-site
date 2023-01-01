@@ -267,7 +267,7 @@ let speed = 0
 const animate = () => {
     requestAnimationFrame(animate)
 
-    material.uniforms['time'].value = (.00005 + (speed)) * (Date.now() - start)
+    material.uniforms['time'].value = (.000125) * (Date.now() - start)
     
 
     renderer.render(scene, camera)
@@ -277,5 +277,4 @@ animate()
 
 addEventListener('mousemove', (event) => {
     material.uniforms['mouseY'].value = event.screenY
-    speed = event.screenX / 10000000
 });

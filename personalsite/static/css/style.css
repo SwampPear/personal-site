@@ -340,13 +340,20 @@ Content
 ##################################################
 */
 
-.content {
+.home-content {
     position: absolute;
     top: 100vh;
     left: 0;
     width: 50vw;
-    height: 100vh;
-    padding: 0 25%;
+    padding: 0 25% 5rem 25%;
+}
+
+.content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50vw;
+    padding: 0 25% 5rem 25%;
 }
 
 /* 
