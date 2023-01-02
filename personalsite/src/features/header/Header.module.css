@@ -1,0 +1,35 @@
+header {
+    position: fixed;
+    z-index: 901;
+    top: 0;
+    left: 0;
+    width: calc(100vw - 1.5rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .75rem;
+    background-color: var(--transluscent-cream);
+    backdrop-filter: blur(10px);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--black);
+    margin-left: 1rem;
+}
+
+.darkmode {
+    height: 40px;
+    width: 40px;
+    border: none;
+    padding: 0;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
