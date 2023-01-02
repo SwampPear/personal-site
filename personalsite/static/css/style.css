@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Space+Mono');
 
 :root {
     --cream: #fffdee;
@@ -392,4 +392,16 @@ Link Button
     width: 50vw;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     border-radius: 2rem;
+}
+
+.code-display {
+    width: 50vw;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 2rem;
+    background-color: #30354d;
+    font-size: 1.5rem;
+    font-family: 'Space Mono';
+    color: white;
+    padding: 1rem;
+    font-size: 0;
 }
