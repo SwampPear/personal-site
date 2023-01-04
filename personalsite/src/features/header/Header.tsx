@@ -1,5 +1,4 @@
 import styles from './Header.module.css'
-import logo from '../../../src/gear.svg'
 import darkmode from '../../../src/sun.svg'
 import { Icon } from '../icon/Icon'
 
