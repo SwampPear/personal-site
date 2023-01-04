@@ -1,0 +1,14 @@
+.button {
+    height: 40px;
+    width: 40px;
+    border: none;
+    padding: 0;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.icon {
+    fill: var(--black);
+    height: 40px;
+}

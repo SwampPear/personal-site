@@ -1,6 +1,6 @@
 import styles from './Header.module.css'
-import darkmode from '../../../src/sun.svg'
 import { Icon } from '../icon/Icon'
+import { DarkMode } from '../darkmode/DarkMode' 
 
 export function Header() {
   return (
@@ -11,9 +11,7 @@ export function Header() {
                 Michael Vaden
             </span>
         </div>
-        <button className={styles.darkmode}>
-            <img src={darkmode}/>
-        </button>
+        <DarkMode/>
     </header>
   );
 }
