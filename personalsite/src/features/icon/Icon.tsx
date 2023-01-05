@@ -1,9 +1,16 @@
 import React from 'react';
 import styles from './Icon.module.css'
 
+import { useAppSelector  } from '../../app/hooks'; 
+import { selectDarkModeState, selectDarkModeInit } from '../darkmode/darkModeSlice';
+
+
 const Icon = () => {
+  const darkmode = useAppSelector(selectDarkModeState)
+  const darkmodeInit = useAppSelector(selectDarkModeInit)
+
   return (
-    <svg className={styles.icon} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <svg className={`${styles.icon} ${darkmodeInit ? (darkmode ? styles.iconToDark : styles.iconFromDark) : ''}`} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
         <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 
         1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 
         1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 
