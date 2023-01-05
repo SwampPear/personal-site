@@ -6,6 +6,8 @@ import Nav from './features/nav/Nav'
 import Header from './features/header/Header';
 import Graphic from './features/graphic/Graphic'
 import TextHeader from './features/textheader/TextHeader';
+import Divider from './features/divider/Divider';
+import CodeBlock from './features/codeblock/CodeBlock';
 
 
 const App = () => {
@@ -21,6 +23,8 @@ const App = () => {
         <TextHeader>
           a
         </TextHeader>
+        <Divider/>
+        <CodeBlock/>
       </div>
 
     </div>

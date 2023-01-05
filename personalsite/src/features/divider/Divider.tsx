@@ -4,7 +4,7 @@ import styles from './Divider.module.css'
 
 const Divider = () => {
   return (
-    <hr/>
+    <hr className={styles.divider}/>
   );
 }
 
