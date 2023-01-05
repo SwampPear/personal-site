@@ -8,6 +8,7 @@ import Graphic from './features/graphic/Graphic'
 import TextHeader from './features/textheader/TextHeader';
 import Divider from './features/divider/Divider';
 import CodeBlock from './features/codeblock/CodeBlock';
+import Section from './features/section/Section';
 
 
 const App = () => {
@@ -16,7 +17,12 @@ const App = () => {
       <Nav/>
       <Header/>
       <Graphic />
-      <div>
+      <div className='check-it-button__container'>
+        <a href="www.google.com" className='check-it-button'>
+          Check out how I made this &#8594;
+        </a>
+      </div>
+      <Section>
         <TextHeader large={true}>
           a
         </TextHeader>
@@ -25,10 +31,9 @@ const App = () => {
         </TextHeader>
         <Divider/>
         <CodeBlock/>
-      </div>
-
+      </Section>
     </div>
-  );
+  )
 }
 
 export default App

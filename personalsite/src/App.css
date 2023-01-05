@@ -2,3 +2,29 @@
   width: 100vw;
   height: 100vh;
 }
+
+.check-it-button__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 85vh;
+}
+
+.check-it-button {
+  background-color: var(--blue);
+  padding: .75rem;
+  transition: var(--transition);
+  border-radius: 1rem;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  text-decoration: none;
+  color: var(--black);
+  height: fit-content;
+}
+
+.check-it-button:hover {
+  background-color: var(--dark-blue);
+}
