@@ -10,13 +10,18 @@ import Divider from './features/divider/Divider';
 import CodeBlock from './features/codeblock/CodeBlock';
 import Section from './features/section/Section';
 
+import { selectDarkModeState } from './features/darkmode/darkModeSlice'; 
+import { useAppSelector } from './app/hooks'
+
 
 const App = () => {
+  const darkmode = useAppSelector(selectDarkModeState)
+
   return (
-    <div className="App">
+    <div className={`App ${darkmode ? 'body-to-dark' : 'body-from-dark'}`}>
       <Nav/>
       <Header/>
-      <Graphic />
+      <Graphic/>
       <div className='check-it-button__container'>
         <a href="www.google.com" className='check-it-button'>
           Check out how I made this &#8594;

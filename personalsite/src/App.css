@@ -1,6 +1,28 @@
 .App {
   width: 100vw;
-  height: 100vh;
+  height: fit-content;
+}
+
+@keyframes body-to-dark {
+  from {background-color: var(--cream);}
+  to {background-color: var(--black);}
+}
+
+.body-to-dark {
+  animation-name: body-to-dark;
+  animation-duration: .3s;
+  animation-fill-mode: forwards; 
+}
+
+@keyframes body-from-dark {
+  from {background-color: var(--black);}
+  to {background-color: var(--cream);}
+}
+
+.body-from-dark {
+  animation-name: body-from-dark;
+  animation-duration: .3s;
+  animation-fill-mode: forwards; 
 }
 
 .check-it-button__container {

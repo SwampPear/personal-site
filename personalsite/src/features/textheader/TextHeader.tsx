@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './TextHeader.module.css'
 
-import { selectDarkModeState } from '../darkmode/darkModeSlice';
-import { useAppSelector } from '../../app/hooks';
+import { selectDarkModeState } from '../darkmode/darkModeSlice'
+import { useAppSelector } from '../../app/hooks'
 
 
 type TextHeaderProps = {
