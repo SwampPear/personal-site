@@ -12,6 +12,28 @@ header {
     backdrop-filter: blur(10px);
 }
 
+@keyframes header-to-dark {
+    from {background-color: var(--transluscent-cream);}
+    to {background-color: var(--transluscent-black);}
+}
+
+.headerToDark {
+    animation-name: header-to-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes header-from-dark {
+    from {background-color: var(--transluscent-black);}
+    to {background-color: var(--transluscent-cream);}
+}
+
+.headerFromDark {
+    animation-name: header-from-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
+
 .brand {
     display: flex;
     align-items: center;
@@ -22,14 +44,4 @@ header {
     font-weight: bold;
     color: var(--black);
     margin-left: 1rem;
-}
-
-.darkmode {
-    height: 40px;
-    width: 40px;
-    border: none;
-    padding: 0;
-    outline: none;
-    background-color: transparent;
-    cursor: pointer;
 }
