@@ -281,6 +281,10 @@ export function Graphic() {
     
     animate()
 
+    addEventListener('mousemove', (event) => {
+      material.uniforms['mouseY'].value = event.screenY
+    })
+
   }, []);
   
   return (
