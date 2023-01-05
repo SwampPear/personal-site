@@ -204,7 +204,7 @@ float turbulence( vec3 p ) {
 
 void main() {
 
-vUv = uv;
+  vUv = uv;
 
   // add time to the noise parameters so it's animated
   noise = 5.0 *  -.10 * turbulence( .5 * normal + time );

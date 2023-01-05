@@ -1,0 +1,9 @@
+.large {
+    font-size: 3em;
+    color: var(--black);
+}
+
+.small {
+    font-size: 2rem;
+    color: var(--black);
+}
