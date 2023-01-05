@@ -1,16 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { stat } from 'fs';
 import { RootState } from '../../app/store';
 
 
 export interface DarkModeState {
   value: boolean;
-  status: 'light' | 'dark';
+  init: boolean;
 }
 
 const initialState: DarkModeState = {
   value: false,
-  status: 'light',
+  init: false
 }
 
 export const darkModeSlice = createSlice({
@@ -18,6 +17,10 @@ export const darkModeSlice = createSlice({
   initialState,
   reducers: {
     toggle: (state) => {
+      if (!state.init && !state.value) {
+        state.init = true
+      }
+
       state.value = !state.value
     }
   }
@@ -26,5 +29,6 @@ export const darkModeSlice = createSlice({
 export const { toggle } = darkModeSlice.actions
 
 export const selectDarkModeState = (state: RootState) => state.darkMode.value
+export const selectDarkModeInit = (state: RootState) => state.darkMode.init
 
 export default darkModeSlice.reducer
