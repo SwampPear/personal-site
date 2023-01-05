@@ -1,6 +1,5 @@
 import React from 'react'
 import './App.css'
-import { Counter } from './features/counter/Counter';
 
 import Nav from './features/nav/Nav'
 import Header from './features/header/Header';
@@ -26,7 +25,6 @@ const App = () => {
       <div className='check-it-button__container'>
         <a href="www.google.com" className='check-it-button'>
           Check out how I made this &#8594;
-          {darkmodeInit ? 'a' : 'b'}
         </a>
       </div>
       <Section>
@@ -38,7 +36,6 @@ const App = () => {
         </TextHeader>
         <Divider/>
         <CodeBlock/>
-        <Counter />
       </Section>
     </div>
   )

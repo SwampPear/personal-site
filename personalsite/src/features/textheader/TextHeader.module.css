@@ -1,9 +1,31 @@
 .large {
-    font-size: 3em;
+    font-size: 3.5em;
     color: var(--black);
 }
 
 .small {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--black);
+}
+
+@keyframes text-to-dark {
+    from {color: var(--black);}
+    to {color: var(--cream);}
+}
+
+.textToDark {
+    animation-name: text-to-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes text-from-dark {
+    from {color: var(--cream);}
+    to {color: var(--black);}
+}
+
+.textFromDark {
+    animation-name: text-from-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
 }
