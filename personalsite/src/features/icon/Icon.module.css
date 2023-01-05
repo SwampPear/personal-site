@@ -1,6 +1,7 @@
 .icon {
     height: 40px;
     fill: var(--black);
+    cursor: pointer;
 }
 
 @keyframes icon-to-dark {
