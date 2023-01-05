@@ -1,10 +1,14 @@
 import React from 'react';
 import styles from './DarkMode.module.css'
+import { useAppDispatch } from '../../app/hooks'
+import { toggle } from './darkModeSlice';
 
 
 const DarkMode = () => {
+  const dispatch = useAppDispatch()
+  
   return (
-    <button className={styles.button}>
+    <button onClick={() => dispatch(toggle())} className={styles.button}>
         <svg className={styles.icon} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
             <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0
             0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 

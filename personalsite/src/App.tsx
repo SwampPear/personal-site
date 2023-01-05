@@ -31,6 +31,7 @@ const App = () => {
         </TextHeader>
         <Divider/>
         <CodeBlock/>
+        <Counter />
       </Section>
     </div>
   )
