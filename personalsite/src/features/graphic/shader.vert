@@ -1,10 +1,3 @@
-//import { useEffect } from 'react'
-import styles from './Graphic.module.css'
-import * as THREE from 'three'
-
-import React, { useEffect, useRef } from 'react';
-
-const vertexShader = `
 //
 // GLSL textureless classic 3D noise "cnoise",
 // with an RSL-style periodic variant "pnoise".
@@ -214,76 +207,4 @@ vUv = uv;
   vec3 newPosition = position + normal * displacement;
   gl_Position = projectionMatrix * modelViewMatrix * vec4( newPosition, 1.0 );
 
-}
-`
-
-const fragmentShader = `
-varying vec2 vUv;
-
-void main() {
-
-  vec3 color = vec3(vUv.x, vUv.y, 1.0);
-  gl_FragColor = vec4( color.rgb, 1.0 );
-
-}
-`
-
-export function Graphic() {
-  const mountRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    // setup
-    var scene = new THREE.Scene()
-    var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 )
-    var renderer = new THREE.WebGLRenderer( { alpha: true, antialias: true } )
-    renderer.setSize( window.innerWidth, window.innerHeight )
-    renderer.setClearColor( 0x000000, 0 )
-    renderer.setPixelRatio( window.devicePixelRatio )
-    
-    // append to container div
-    mountRef.current!.appendChild( renderer.domElement )
-
-    let start = Date.now()
-
-    const material = new THREE.ShaderMaterial( {
-        uniforms: {
-          time: { // float initialized to 0
-            value: 0.0
-          },
-          mouseY: {
-            value: 0.0
-          }
-        },
-        vertexShader: vertexShader,
-        fragmentShader: fragmentShader
-    });
-    
-
-    const mesh = new THREE.Mesh(
-      new THREE.IcosahedronGeometry(35, 40),
-      material
-  )
-  
-  scene.add(mesh)
-  
-  
-  camera.position.z = 100
-  
-  const animate = () => {
-      requestAnimationFrame(animate)
-  
-      material.uniforms['time'].value = (.000125) * (Date.now() - start)
-      
-  
-      renderer.render(scene, camera)
-  }
-  
-  animate()
-
-  }, []);
-  
-  return (
-    <div className={styles.container} ref={mountRef}>
-    </div>
-  );
 }
