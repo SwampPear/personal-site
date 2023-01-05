@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './DarkMode.module.css'
 
-export function DarkMode() {
+
+const DarkMode = () => {
   return (
     <button className={styles.button}>
         <svg className={styles.icon} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
@@ -19,3 +20,5 @@ export function DarkMode() {
     </button>
   );
 }
+
+export default DarkMode

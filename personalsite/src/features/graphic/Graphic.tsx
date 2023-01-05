@@ -1,8 +1,8 @@
-//import { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react';
 import styles from './Graphic.module.css'
+
 import * as THREE from 'three'
 
-import React, { useEffect, useRef } from 'react';
 
 const vertexShader = `
 //
@@ -228,7 +228,7 @@ void main() {
 }
 `
 
-export function Graphic() {
+const Graphic = () => {
   const mountRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -292,3 +292,5 @@ export function Graphic() {
     </div>
   );
 }
+
+export default Graphic

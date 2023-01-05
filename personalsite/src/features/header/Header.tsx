@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './Header.module.css'
-import { Icon } from '../icon/Icon'
-import { DarkMode } from '../darkmode/DarkMode' 
+import Icon from '../icon/Icon'
+import DarkMode from '../darkmode/DarkMode' 
 
-export function Header() {
+const Header = () => {
   return (
     <header>
         <div className={styles.brand}>
@@ -16,3 +16,5 @@ export function Header() {
     </header>
   );
 }
+
+export default Header

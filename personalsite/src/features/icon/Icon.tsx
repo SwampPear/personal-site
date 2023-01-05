@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Icon.module.css'
 
-export function Icon() {
+const Icon = () => {
   return (
     <svg className={styles.icon} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
         <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 
@@ -18,3 +18,5 @@ export function Icon() {
     </svg>
   );
 }
+
+export default Icon
