@@ -35,3 +35,25 @@ nav:hover {
     color: var(--black);
     text-decoration: none;
 }
+
+@keyframes scroll-button-to-dark {
+    from {color: var(--black);}
+    to {color: var(--cream);}
+}
+
+.scrollButtonToDark {
+    animation-name: scroll-button-to-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes scroll-button-from-dark {
+    from {color: var(--cream);}
+    to {color: var(--black);}
+}
+
+.scrollButtonFromDark {
+    animation-name: scroll-button-from-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
