@@ -45,3 +45,25 @@ header {
     color: var(--black);
     margin-left: 1rem;
 }
+
+@keyframes title-to-dark {
+    from {color: var(--black);}
+    to {color: var(--cream);}
+}
+
+.titleToDark {
+    animation-name: title-to-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes title-from-dark {
+    from {color: var(--cream);}
+    to {color: var(--black);}
+}
+
+.iconFromDark {
+    animation-name: icon-from-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}

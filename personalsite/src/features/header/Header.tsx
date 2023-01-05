@@ -14,10 +14,10 @@ const Header = () => {
   return (
     <header className={`${darkmodeInit ? (darkmode ? styles.headerToDark : styles.headerFromDark) : ''}`}>
         <div className={styles.brand}>
-        <Icon />
-            <span className={styles.title}>
-                Michael Vaden
-            </span>
+          <Icon />
+          <span className={`${styles.title} ${darkmodeInit ? (darkmode ? styles.titleToDark : styles.titleFromDark) : ''}`}>
+              Michael Vaden
+          </span>
         </div>
         <DarkMode/>
     </header>
