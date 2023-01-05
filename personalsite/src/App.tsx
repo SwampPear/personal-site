@@ -5,6 +5,7 @@ import Nav from './features/nav/Nav'
 import Header from './features/header/Header';
 import Graphic from './features/graphic/Graphic'
 import TextHeader from './features/textheader/TextHeader';
+import TextParagraph from './features/textparagraph/TextParagraph'
 import Divider from './features/divider/Divider';
 import CodeBlock from './features/codeblock/CodeBlock';
 import Section from './features/section/Section';
@@ -34,6 +35,10 @@ const App = () => {
         <TextHeader>
           a
         </TextHeader>
+        <TextParagraph>
+          dkfhasdkfjh
+        </TextParagraph>
+
         <Divider/>
         <CodeBlock/>
       </Section>
