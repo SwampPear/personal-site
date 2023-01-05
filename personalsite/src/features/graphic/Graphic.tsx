@@ -1,9 +1,11 @@
-import { useEffect } from 'react'
+//import { useEffect } from 'react'
 import styles from './Graphic.module.css'
 import * as THREE from 'three'
 
+import React from 'react';
+
 export function Graphic() {
-    
+  /*
   useEffect(() => {
     // setup
     //const scene = new THREE.Scene()
@@ -27,7 +29,7 @@ export function Graphic() {
     };
     animate();
   }, [])
-
+  */
   return (
     <div>
     </div>

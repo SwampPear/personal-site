@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './Header.module.css'
 import { Icon } from '../icon/Icon'
 import { DarkMode } from '../darkmode/DarkMode' 
