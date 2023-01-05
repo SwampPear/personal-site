@@ -34,6 +34,7 @@ export function Graphic() {
     animate()
 
     //mountRef.current!.removeChild( renderer.domElement )
+    console.log("t")
   }, []);
   
   return (
