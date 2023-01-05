@@ -234,7 +234,10 @@ export function Graphic() {
   useEffect(() => {
     // setup
     var scene = new THREE.Scene()
+
     var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 )
+    camera.position.z = 100
+
     var renderer = new THREE.WebGLRenderer( { alpha: true, antialias: true } )
     renderer.setSize( window.innerWidth, window.innerHeight )
     renderer.setClearColor( 0x000000, 0 )
@@ -243,8 +246,7 @@ export function Graphic() {
     // append to container div
     mountRef.current!.appendChild( renderer.domElement )
 
-    let start = Date.now()
-
+    // define and add blob
     const material = new THREE.ShaderMaterial( {
         uniforms: {
           time: { // float initialized to 0
@@ -256,29 +258,28 @@ export function Graphic() {
         },
         vertexShader: vertexShader,
         fragmentShader: fragmentShader
-    });
+    })
     
-
     const mesh = new THREE.Mesh(
       new THREE.IcosahedronGeometry(35, 40),
       material
-  )
+    )
   
-  scene.add(mesh)
+    scene.add(mesh)
   
-  
-  camera.position.z = 100
-  
-  const animate = () => {
-      requestAnimationFrame(animate)
-  
-      material.uniforms['time'].value = (.000125) * (Date.now() - start)
-      
-  
-      renderer.render(scene, camera)
-  }
-  
-  animate()
+    // animation
+    let start = Date.now()
+
+    const animate = () => {
+        requestAnimationFrame(animate)
+    
+      material.uniforms['time'].value = .000125 * ( Date.now() - start )
+        
+    
+      renderer.render( scene, camera )
+    }
+    
+    animate()
 
   }, []);
   
