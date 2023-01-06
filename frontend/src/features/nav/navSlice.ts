@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
 
 
-enum NavOptions {
+export enum NavOptions {
   home,
   work,
   posts,
