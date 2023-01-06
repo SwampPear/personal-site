@@ -39,11 +39,22 @@ header {
     align-items: center;
 }
 
+.brand > * {
+    margin: 0 .5rem;
+}
+
+.brand:last-child {
+    margin: 0 .5rem 0 1rem
+}
+
+.brand:first-child {
+    margin-left: 0 1rem 0 .5rem;
+}
+
 .title {
     font-size: 1.25rem;
     font-weight: bold;
     color: var(--black);
-    margin-left: 1rem;
 }
 
 @keyframes title-to-dark {

@@ -1,6 +1,7 @@
 .App {
   width: 100vw;
   height: fit-content;
+  background-color: var(--cream);
 }
 
 @keyframes app-to-dark {
