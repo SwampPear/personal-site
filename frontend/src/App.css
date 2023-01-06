@@ -50,3 +50,20 @@
 .check-it-button:hover {
   background-color: var(--dark-blue);
 }
+
+.welcome {
+  display: flex;
+  justify-content: space-between;
+}
+
+.welcome__text {
+  width: 37.5vw;
+}
+
+.welcome__img {
+  height: 140px;
+  width: 140px;
+  object-fit: cover;
+  border-radius: 40%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}

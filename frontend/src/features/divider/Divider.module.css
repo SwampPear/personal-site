@@ -1,8 +1,8 @@
 .divider {
-    width: 75%;
+    width: 37.5vw;
     height: 10px;
     border: none;
     border-radius: 5px;
     background: var(--gradient);
-    margin: 0;
+    margin: 1rem 0;
 }

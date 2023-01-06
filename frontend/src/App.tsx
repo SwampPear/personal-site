@@ -1,6 +1,8 @@
 import React from 'react'
 import './App.css'
 
+import me from './me.jpg'
+
 import Nav from './features/nav/Nav'
 import Header from './features/header/Header';
 import Graphic from './features/graphic/Graphic'
@@ -29,18 +31,23 @@ const App = () => {
         </a>
       </div>
       <Section>
-        <TextHeader large={true}>
-          a
-        </TextHeader>
-        <TextHeader>
-          a
-        </TextHeader>
-        <TextParagraph>
-          dkfhasdkfjh
-        </TextParagraph>
-
-        <Divider/>
-        <CodeBlock/>
+        <div className='welcome'>
+          <div className='welcome__text'>
+            <TextHeader>
+              Michael Vaden
+            </TextHeader>
+            <TextParagraph>
+              developer ❀ designer
+            </TextParagraph>
+            <Divider/>
+          </div>
+          <img className='welcome__img' src={me}/>
+        </div>
+        <div>
+          <TextParagraph>
+            Hey, I'm Michael.
+          </TextParagraph>
+        </div>
       </Section>
     </div>
   )
