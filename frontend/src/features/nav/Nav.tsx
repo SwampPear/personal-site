@@ -13,13 +13,28 @@ const Nav = () => {
 
   return (
     <nav>
-        <div className={styles.content}>
-            <span onClick={() => dispatch(switchPage(NavOptions.work))} className={`${styles.scrollButton} ${darkmodeInit ? (darkmode ? styles.scrollButtonToDark : styles.scrollButtonFromDark) : ''}`}>Work</span>
-            <span onClick={() => dispatch(switchPage(NavOptions.posts))} className={`${styles.scrollButton} ${darkmodeInit ? (darkmode ? styles.scrollButtonToDark : styles.scrollButtonFromDark) : ''}`}>Posts</span>
-            <span onClick={() => dispatch(switchPage(NavOptions.contact))} className={`${styles.scrollButton} ${darkmodeInit ? (darkmode ? styles.scrollButtonToDark : styles.scrollButtonFromDark) : ''}`}>Contact</span>
-        </div>
+      <div className={styles.content}>
+        <span 
+          onClick={() => dispatch(switchPage(NavOptions.work))} 
+          className={`${styles.scrollButton} ${darkmodeInit ? (darkmode ? styles.scrollButtonToDark : styles.scrollButtonFromDark) : ''}`}
+        >
+          Work
+        </span>
+        <span 
+          onClick={() => dispatch(switchPage(NavOptions.posts))} 
+          className={`${styles.scrollButton} ${darkmodeInit ? (darkmode ? styles.scrollButtonToDark : styles.scrollButtonFromDark) : ''}`}
+        >
+          Posts
+        </span>
+        <span 
+          onClick={() => dispatch(switchPage(NavOptions.contact))} 
+          className={`${styles.scrollButton} ${darkmodeInit ? (darkmode ? styles.scrollButtonToDark : styles.scrollButtonFromDark) : ''}`}
+        >
+          Contact
+        </span>
+      </div>
     </nav>
-  );
+  )
 }
 
 export default Nav
