@@ -9,6 +9,7 @@ import Home from './features/home/Home'
 import Copyright from './features/copyright/Copyright';
 
 import { selectDarkModeInit, selectDarkModeState } from './features/darkmode/darkModeSlice'; 
+import { selectNavPage, NavOptions } from './features/nav/navSlice';
 import { useAppSelector } from './app/hooks'
 
 

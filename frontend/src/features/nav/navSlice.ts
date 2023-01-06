@@ -26,9 +26,6 @@ export const navSlice = createSlice({
       state.page = action.payload
 
       switch (action.payload) {
-        case NavOptions.home:
-          updateUrl('')
-          break;
         case NavOptions.work:
           updateUrl('/work')
           break
@@ -38,6 +35,8 @@ export const navSlice = createSlice({
         case NavOptions.contact:
           updateUrl('/contact')
           break
+        default:
+          updateUrl('')
       }
     }
   }
