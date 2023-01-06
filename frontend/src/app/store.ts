@@ -3,6 +3,7 @@ import counterReducer from '../features/counter/counterSlice';
 import darkModeReducer from '../features/darkmode/darkModeSlice'
 import navReducer from '../features/nav/navSlice'
 
+
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
