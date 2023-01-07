@@ -48,7 +48,7 @@ class CreatePost(graphene.Mutation):
 
         post_instance.save()
 
-        return CreatePost(book=post_instance)
+        return CreatePost(post=post_instance)
 
 
 class UpdatePost(graphene.Mutation):
