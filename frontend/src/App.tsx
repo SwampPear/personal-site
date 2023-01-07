@@ -23,7 +23,7 @@ const App = () => {
     <div className={`App ${darkmodeInit ? (darkmode ? 'app-to-dark' : 'app-from-dark') : ''}`}>
       <Nav/>
       <Header/>
-      <Blog/>
+      <Posts/>
       <Copyright/>
     </div>
   )

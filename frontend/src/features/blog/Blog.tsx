@@ -40,9 +40,12 @@ const Blog = () => {
             {data.postById.title}
         </TextHeader>
         <TextParagraph>
-            {`Reading Time: ${data.postById.readingTime} minutes`}
+            {`${data.postById.readingTime} minute read`}
         </TextParagraph>
         <Divider/>
+        <TextParagraph>
+            {JSON.stringify(data.postById.content)}
+        </TextParagraph>
     </div>
   )
 }

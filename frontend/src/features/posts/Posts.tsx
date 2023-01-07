@@ -9,13 +9,24 @@ import { useQuery, gql } from "@apollo/client";
 const QUERY = gql`
   query AllPosts {
     allPosts {
-        postId
+      postId
       title
       readingTime
       content
     }
   }
 `
+
+const parseData = (data: any) => {
+    return (
+        data.allPosts.map((post: any) => {
+
+        <p key={post.postId}>
+            Post - {post.postId}: {post.title} {post.readingTime}
+        </p>
+      })
+    )
+}
 
 const Posts = () => {
   const dispatch = useAppDispatch()
@@ -24,17 +35,24 @@ const Posts = () => {
 
   const { data, loading, error } = useQuery( QUERY, { pollInterval: 500 } )
 
-  if (error) return <p style={{marginTop: '5rem'}}>Error</p>;
-
+  if (error) return <p style={{marginTop: '35rem'}}>Error</p>;
   if (loading) return <p style={{marginTop: '5rem'}}>Loading...</p>;
-   
-  return data.allPosts.map(( post: any) => (
-    <div style={{marginTop: '5rem'}} key={post.postId}>
-      <p>
-        Post - {post.postId}: {post.title} {post.readingTime}
-      </p>
+
+  alert(JSON.stringify(data.allPosts))
+
+  return (
+    <div className={styles.container}>
+      {
+        data.allPosts.map((post: any) => {
+          return (
+            <p key={post.postId}>
+              Post - {post.postId}: {post.title} {post.readingTime}
+            </p>
+          )
+        })
+      }
     </div>
-  ))
+  )
 }
 
 export default Posts
