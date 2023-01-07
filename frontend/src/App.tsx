@@ -7,6 +7,7 @@ import Nav from './features/nav/Nav'
 import Header from './features/header/Header';
 import Home from './features/home/Home'
 import Posts from './features/posts/Posts';
+import Blog from './features/blog/Blog';
 import Copyright from './features/copyright/Copyright';
 
 import { selectDarkModeInit, selectDarkModeState } from './features/darkmode/darkModeSlice'; 
@@ -22,7 +23,7 @@ const App = () => {
     <div className={`App ${darkmodeInit ? (darkmode ? 'app-to-dark' : 'app-from-dark') : ''}`}>
       <Nav/>
       <Header/>
-      <Posts/>
+      <Blog/>
       <Copyright/>
     </div>
   )

@@ -12,14 +12,14 @@ class PostType(DjangoObjectType):
 
 class Query(graphene.ObjectType):
     all_posts = graphene.List(PostType)
-    post_by_id = graphene.Field(PostType, name=graphene.Int(required=True))
+    post_by_id = graphene.Field(PostType, postId=graphene.Int(required=True))
 
     def resolve_all_posts(root, info):
         return Post.objects.all()
 
-    def resolve_post_by_id(root, info, id):
+    def resolve_post_by_id(root, info, postId):
         try:
-            return Post.objects.get(id=id)
+            return Post.objects.get(postId=postId)
         except Post.DoesNotExist:
             return None
 
