@@ -4,14 +4,22 @@ import { Provider } from 'react-redux';
 import { store } from './app/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import './index.css';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
 
+const client = new ApolloClient({
+  uri: 'http://127.0.0.1:8000/graphql/',
+  cache: new InMemoryCache()
+})
+
 root.render(
   <Provider store={store}>
-    <App />
+    <ApolloProvider client={client}>
+      <App/>
+    </ApolloProvider>
   </Provider>
 );
 

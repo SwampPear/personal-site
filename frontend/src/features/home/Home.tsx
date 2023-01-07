@@ -9,8 +9,23 @@ import TextParagraph from '../textparagraph/TextParagraph'
 import Divider from '../divider/Divider';
 import Section from '../section/Section';
 
+import { useQuery, gql } from "@apollo/client";
+
+const QUERY = gql`
+  {
+    allPosts {
+      postId
+      title
+      readingTime
+      content
+    }
+  }
+`
+
 
 const Home = () => {
+  const { data, loading, error } = useQuery( QUERY )
+
   return (
     <>
       <Graphic/>
