@@ -26,35 +26,23 @@ const Posts = () => {
 
   const { data, loading, error } = useQuery( QUERY, { pollInterval: 500 } )
 
-  //if (error) return <p style={{marginTop: '35rem'}}>Error</p>;
-  //if (loading) return <p style={{marginTop: '5rem'}}>Loading...</p>;
+  if (error) return <p style={{marginTop: '35rem'}}>Error</p>;
+  if (loading) return <p style={{marginTop: '5rem'}}>Loading...</p>;
 
   return (
     <div className={styles.container}>
-      <div className={styles.post}>
-        <div className={styles.imageContainer}>
-          <img className={styles.image} src={img}/>
-        </div>
-      </div>
-      <div className={styles.post}>
-        <div className={styles.imageContainer}>
-          <img className={styles.image} src={img}/>
-        </div>
-      </div>
-      <div className={styles.post}>
-        <div className={styles.imageContainer}>
-          <img className={styles.image} src={img}/>
-        </div>
-      </div>
-      {/*
+      {
         data.allPosts.map((post: any) => {
           return (
-            <p key={post.postId}>
-              Post - {post.postId}: {post.title} {post.readingTime}
-            </p>
+            <div className={styles.post}>
+              <div className={styles.imageContainer}>
+                <img className={styles.image} src={img}/>
+              </div>
+              <span className={styles.text}>{post.title}</span>
+            </div>
           )
         })
-      */}
+      }
     </div>
   )
 }
