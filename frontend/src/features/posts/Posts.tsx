@@ -24,7 +24,7 @@ const Posts = () => {
   if (loading) return <p style={{marginTop: '5rem'}}>Loading...</p>;
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${styles.fadeIn}`}>
       {
         data.allPosts.map((post: any) => {
           return (
