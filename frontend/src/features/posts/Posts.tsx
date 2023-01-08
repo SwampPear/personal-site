@@ -3,9 +3,6 @@ import styles from './Posts.module.css'
 import img from '../../image.jpeg'
 import Post from '../post/Post';
 
-import { useAppSelector, useAppDispatch } from '../../app/hooks'
-import { selectDarkModeState, selectDarkModeInit } from '../darkmode/darkModeSlice'
-
 import { useQuery, gql } from "@apollo/client";
 
 const QUERY = gql`
@@ -21,10 +18,6 @@ const QUERY = gql`
 
 
 const Posts = () => {
-  const dispatch = useAppDispatch()
-  const darkmode = useAppSelector(selectDarkModeState)
-  const darkmodeInit = useAppSelector(selectDarkModeInit)
-
   const { data, loading, error } = useQuery( QUERY, { pollInterval: 500 } )
 
   if (error) return <p style={{marginTop: '35rem'}}>Error</p>;

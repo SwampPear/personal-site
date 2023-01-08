@@ -29,3 +29,25 @@
     font-weight: bold;
     font-size: 1.5rem;
 }
+
+@keyframes text-to-dark {
+    from {color: var(--black);}
+    to {color: var(--cream);}
+}
+
+.textToDark {
+    animation-name: text-to-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes text-from-dark {
+    from {color: var(--cream);}
+    to {color: var(--black);}
+}
+
+.textFromDark {
+    animation-name: text-from-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
