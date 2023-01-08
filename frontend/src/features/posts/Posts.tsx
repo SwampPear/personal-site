@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Posts.module.css'
 import img from '../../image.jpeg'
+import Post from '../post/Post';
 
 import { useAppSelector, useAppDispatch } from '../../app/hooks'
 import { selectDarkModeState, selectDarkModeInit } from '../darkmode/darkModeSlice'
@@ -34,12 +35,7 @@ const Posts = () => {
       {
         data.allPosts.map((post: any) => {
           return (
-            <div className={styles.post}>
-              <div className={styles.imageContainer}>
-                <img className={styles.image} src={img}/>
-              </div>
-              <span className={styles.text}>{post.title}</span>
-            </div>
+            <Post img={img} title={post.title}/>
           )
         })
       }

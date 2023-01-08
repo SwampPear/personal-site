@@ -7,6 +7,11 @@ class Post(models.Model):
     reading_time = models.IntegerField(default=5)
     content = models.JSONField()
 
+class Work(models.Model):
+    workId = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=127)
+    content = models.JSONField()
+
 
 """
 # content data for testing purposes
