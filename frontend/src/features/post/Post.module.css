@@ -1,0 +1,30 @@
+.container {
+    width: 100%;
+    transition: var(--transition);
+}
+
+.container:hover {
+    transform: translateY(-5px);
+}
+
+.imageContainer {
+    border-radius: 1rem;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.image {
+    width: 100%;
+    object-fit: cover;
+}
+
+.text {
+    color: var(--black);
+    margin: 1rem 0;
+    display: inline-flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
