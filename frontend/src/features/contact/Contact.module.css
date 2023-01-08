@@ -1,0 +1,129 @@
+.container {
+    width: 50%;
+    display: grid;
+    padding: 10rem 25% 0 25%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: 2rem;
+    row-gap: 2rem;
+    transform: translateY(12.5vh);
+    opacity: 0%;
+}
+
+@keyframes fade-in {
+    from {
+        transform: translateY(12.5vh);
+        opacity: 0%;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 100%;
+    }
+}
+
+.fadeIn {
+    animation-name: fade-in;
+    animation-duration: .5s;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes fade-out {
+    from {
+        transform: translateY(0);
+        opacity: 100%;
+    }
+    to {
+        transform: translateY(12.5vh);
+        opacity: 0%;
+    }
+}
+
+.fadeOut {
+    animation-name: fade-out;
+    animation-duration: 1s;
+    animation-fill-mode: forwards; 
+}
+
+
+
+.login {
+    /* Display & Box Model */
+    border-radius: 10px;
+    width: 20vw; 
+    height: fit-content; 
+    padding: 2rem;
+  
+    /* Color */
+    background-color: #fff;
+  
+    /* Other */
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  }
+  
+.login > h2 {
+    /* Display & Box Model */
+    margin: 0 0 30px;
+    padding: 0;
+    text-align: center;
+  
+    /* Color */
+    color: var(--main-black);
+}
+  
+.login__button-wrapper{
+    /* Display & Box Model */
+    display: flex;
+    justify-content: center;
+}
+  
+  .login__input {
+    /* Positioning */
+    position: relative;
+  }
+  
+  .login__input > input {
+    /* Display & Box Model */
+    border: none;
+    border-bottom: 1px solid var(--main-black);
+    margin-bottom: 30px;
+    padding: 10px 0;
+    width: 100%;
+    
+    /* Color */
+    background: transparent;
+    color: var(--main-black);
+  
+    /* Other */
+    font-size: 16px;
+    outline: none;
+  }
+  .login__input > label {
+    /* Positioning */
+    left: 0;
+    position: absolute;
+    top:0;
+    
+    /* Display and Box Model */
+    padding: 10px 0;
+  
+    /* Color */
+    color: var(--main-black);
+  
+    /* Other */
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .login__input > input:focus ~ label,
+  .login__input > input:valid ~ label {
+    /* Positioning */
+    left: 0;
+    top: -20px;
+    
+    /* Color */
+    color: var(--main-blue);
+  
+    /* Other */
+    font-size: 12px;
+  }

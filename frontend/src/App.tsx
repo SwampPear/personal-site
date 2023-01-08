@@ -15,6 +15,7 @@ import { selectDarkModeInit, selectDarkModeState } from './features/darkmode/dar
 import { useAppSelector } from './app/hooks'
 
 import { selectNavPage, NavOptions } from './features/nav/navSlice';
+import Contact from './features/contact/Contact';
 
 
 const handlePage = (page: NavOptions) => {
@@ -25,6 +26,8 @@ const handlePage = (page: NavOptions) => {
       return <Works/>
     case(NavOptions.posts):
       return <Posts/>
+    case(NavOptions.contact):
+      return <Contact/>
   }
 }
 
