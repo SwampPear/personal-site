@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Icon.module.css'
+import styles from './Home.module.css'
 
 import me from '../../me.jpg'
 
@@ -27,7 +27,7 @@ const Home = () => {
   const { data, loading, error } = useQuery( QUERY )
 
   return (
-    <>
+    <div className={`${styles.container} ${styles.fadeIn}`}>
       <Graphic/>
       <div className='check-it-button__container'>
         <a href="www.google.com" className='check-it-button'>
@@ -56,7 +56,7 @@ const Home = () => {
           </TextParagraph>
         </div>
       </Section>
-    </>
+    </div>
   )
 }
 

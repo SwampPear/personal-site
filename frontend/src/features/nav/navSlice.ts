@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '../../app/store';
-import { updateUrl } from '../../app/utils';
 
 
 export enum NavOptions {
@@ -24,20 +23,6 @@ export const navSlice = createSlice({
   reducers: {
     switchPage: (state, action: PayloadAction<NavOptions>) => {
       state.page = action.payload
-
-      switch (action.payload) {
-        case NavOptions.work:
-          updateUrl('/work')
-          break
-        case NavOptions.posts:
-          updateUrl('/posts')
-          break
-        case NavOptions.contact:
-          updateUrl('/contact')
-          break
-        default:
-          updateUrl('')
-      }
     }
   }
 })
