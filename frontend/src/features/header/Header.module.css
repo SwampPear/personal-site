@@ -37,6 +37,11 @@ header {
 .brand {
     display: flex;
     align-items: center;
+    cursor: pointer;
+    -webkit-user-select: none;    
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .brand > * {

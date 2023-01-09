@@ -34,6 +34,11 @@ nav:hover {
     font-weight: bold;
     color: var(--black);
     text-decoration: none;
+    cursor: pointer;
+    -webkit-user-select: none;    
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 @keyframes scroll-button-to-dark {
