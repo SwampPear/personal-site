@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import styles from './Contact.module.css'
 
 import { selectDarkModeState, selectDarkModeInit } from '../darkmode/darkModeSlice'
@@ -6,8 +6,8 @@ import { useAppSelector } from '../../app/hooks'
 
 
 const Contact = () => {
-  const darkmode = useAppSelector(selectDarkModeState)
-  const darkmodeInit = useAppSelector(selectDarkModeInit)
+  const darkmode = useAppSelector( selectDarkModeState )
+  const darkmodeInit = useAppSelector( selectDarkModeInit )
 
   return (
     <div className={`${styles.container} ${styles.fadeIn}`}>

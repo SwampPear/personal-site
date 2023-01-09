@@ -12,7 +12,7 @@ class PostType(DjangoObjectType):
 
 class WorkType(DjangoObjectType):
     class Meta:
-        model = Post
+        model = Work
         fields = ('workId', 'title', 'content')
 
 
