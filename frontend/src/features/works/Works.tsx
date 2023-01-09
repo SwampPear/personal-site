@@ -1,12 +1,9 @@
-import React from 'react';
+import React from 'react'
 import styles from './Works.module.css'
 import img from '../../image.jpeg'
-import Post from '../post/Post';
+import Post from '../post/Post'
 
-import { useAppSelector, useAppDispatch } from '../../app/hooks'
-import { selectDarkModeState, selectDarkModeInit } from '../darkmode/darkModeSlice'
-
-import { useQuery, gql } from "@apollo/client";
+import { useQuery, gql } from '@apollo/client'
 
 const QUERY = gql`
   query {
@@ -19,15 +16,11 @@ const QUERY = gql`
 `
 
 
-const Posts = () => {
-  const dispatch = useAppDispatch()
-  const darkmode = useAppSelector(selectDarkModeState)
-  const darkmodeInit = useAppSelector(selectDarkModeInit)
-
+const Works = () => {
   const { data, loading, error } = useQuery( QUERY, { pollInterval: 500 } )
 
-  if (error) return <p style={{marginTop: '35rem'}}>Error</p>;
-  if (loading) return <p style={{marginTop: '5rem'}}>Loading...</p>;
+  if (error) return <></>
+  if (loading) return <></>
 
   return (
     <div className={`${styles.container} ${styles.fadeIn}`}>
@@ -42,4 +35,4 @@ const Posts = () => {
   )
 }
 
-export default Posts
+export default Works

@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 import styles from './Posts.module.css'
 import img from '../../image.jpeg'
-import Post from '../post/Post';
+import Post from '../post/Post'
 
-import { useQuery, gql } from "@apollo/client";
+import { useQuery, gql } from '@apollo/client'
 
 const QUERY = gql`
   query AllPosts {
@@ -20,8 +20,8 @@ const QUERY = gql`
 const Posts = () => {
   const { data, loading, error } = useQuery( QUERY, { pollInterval: 500 } )
 
-  if (error) return <p style={{marginTop: '35rem'}}>Error</p>;
-  if (loading) return <p style={{marginTop: '5rem'}}>Loading...</p>;
+  if (error) return <></>
+  if (loading) return <></>
 
   return (
     <div className={`${styles.container} ${styles.fadeIn}`}>
