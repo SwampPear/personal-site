@@ -25,7 +25,7 @@ const Contact = () => {
           <label>What can I help you with?</label>
           <textarea name="inquiry"                                                                                                                                                                                                  
           autoFocus={true} autoCapitalize="none" autoComplete="inquiry"                                                                                                                                                                          
-          maxLength={32} required={true}/>
+          maxLength={2047} required={true}/>
         </div>
       </form>                                                                                                                                                                                                                                 
     </div> 

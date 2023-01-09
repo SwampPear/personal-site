@@ -81,19 +81,18 @@
     left: 0;
     top: -20px;
     color: var(--main-blue);
-    font-size: 12px;
+    font-size: .75rem;
 }
 
 .textarea > textarea {
     display: block;
     border: none;
     border-bottom: 1px solid var(--black);
-    margin-bottom: 30px;
-    padding: 10px 0;
+    padding: 1rem 0;
     width: 100%;
     background: transparent;
     color: var(--black);
-    font-size: 16px;
+    font-size: 1rem;
     outline: none;
     max-width: 50vw;
     max-height: 20vh
