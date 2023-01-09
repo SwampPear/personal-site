@@ -103,3 +103,59 @@
     color: var(--black);
     font-weight: bold;
 }
+
+@keyframes text-to-dark {
+    from {color: var(--black);}
+    to {color: var(--cream);}
+}
+
+.textToDark {
+    animation-name: text-to-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes text-from-dark {
+    from {color: var(--cream);}
+    to {color: var(--black);}
+}
+
+.textFromDark {
+    animation-name: text-from-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes input-to-dark {
+    from {
+        color: var(--black);
+        border-bottom: 1px solid var(--black);
+    }
+    to {
+        color: var(--cream);
+        border-bottom: 1px solid var(--cream);
+    }
+}
+
+.inputToDark {
+    animation-name: input-to-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes input-from-dark {
+    from {
+        color: var(--cream);
+        border-bottom: 1px solid var(--cream);
+    }
+    to {
+        color: var(--black);
+        border-bottom: 1px solid var(--black);
+    }
+}
+
+.inputFromDark {
+    animation-name: input-from-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
