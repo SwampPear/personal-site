@@ -1,7 +1,5 @@
 import styles from './Contact.module.css'
 
-import HomeContainer from '../homeContainer/HomeContainer'
-
 import { selectDarkModeState, selectDarkModeInit } from '../darkmode/darkModeSlice'
 import { useAppSelector } from '../../app/hooks'
 
@@ -11,7 +9,7 @@ const Contact = () => {
   const darkmodeInit = useAppSelector( selectDarkModeInit )
 
   return (
-    <HomeContainer>
+    <div className={styles.container}>
       <form method="post">
         <div className={styles.row}>
           <div className={styles.input}>
@@ -60,7 +58,7 @@ const Contact = () => {
           />
         </div>
       </form>                                                                                                                                                                                                                                 
-    </HomeContainer>
+    </div>
   )
 }
 

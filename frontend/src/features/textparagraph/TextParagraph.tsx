@@ -14,7 +14,7 @@ const TextParagraph = (props: TextParagraphProps) => {
   const darkmodeInit = useAppSelector(selectDarkModeInit)
 
   return (
-    <p className={`${darkmodeInit ? (darkmode ? styles.textToDark : styles.textFromDark) : ''}`}>
+    <p className={`${styles.p} ${darkmodeInit ? (darkmode ? styles.textToDark : styles.textFromDark) : ''}`}>
       {props.children}
     </p>
   )

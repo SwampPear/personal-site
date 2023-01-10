@@ -10,7 +10,7 @@
 }
 
 .container {
-    width: 50%;
+    width: 50vw;
     display: grid;
     padding: 10rem 25% 0 25%;
     grid-template-columns: 1fr 1fr;

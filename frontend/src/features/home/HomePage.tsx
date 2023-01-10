@@ -30,14 +30,14 @@ const HomePage = () => {
   return (
     <div className={`${styles.container} ${styles.fadeIn}`}>
       <Graphic/>
-      <div className='check-it-button__container'>
-        <a href="www.google.com" className='check-it-button'>
+      <div className={styles.checkItButtonContainer}>
+        <a href="www.google.com" className={styles.checkItButton}>
           Check out how I made this &#8594;
         </a>
       </div>
-      <div>
-        <div className='welcome'>
-          <div className='welcome__text'>
+      <div className={styles.main}>
+        <div className={styles.welcome}>
+          <div className={styles.welcomeText}>
             <TextHeader>
               Michael Vaden
             </TextHeader>
@@ -46,16 +46,14 @@ const HomePage = () => {
             </TextParagraph>
             <Divider/>
           </div>
-          <Image className='welcome__img' src={me} alt=''/>
+          <Image className={styles.welcomeImage} src={me} alt=''/>
         </div>
-        <div>
-          <TextParagraph>
-            &emsp;Hey, I'm Michael. I'm a fullstack web developer, blockchain developer, and designer based out of Atlanta, Georgia
-            and I'm currently a student at the Georgia Institute of Technology. Aside from my passions I have with developing I love 
-            making music and performing and I currently play guitar, bass, trombone, tuba and a little keyboard. I'm also trying to 
-            pick up the drums.
-          </TextParagraph>
-        </div>
+        <TextParagraph>
+          &emsp;Hey, I'm Michael. I'm a fullstack web developer, blockchain developer, and designer based out of Atlanta, Georgia
+          and I'm currently a student at the Georgia Institute of Technology. Aside from my passions I have with developing I love 
+          making music and performing and I currently play guitar, bass, trombone, tuba and a little keyboard. I'm also trying to 
+          pick up the drums.
+        </TextParagraph>
       </div>
     </div>
   )

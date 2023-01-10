@@ -1,3 +1,31 @@
+@keyframes fade-in {
+    from {
+        transform: translateY(12.5vh);
+        opacity: 0%;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 100%;
+    }
+}
+
+.container {
+    width: 50vw;
+    padding: 10rem 25% 0 25%;
+    transform: translateY(12.5vh);
+    opacity: 0%;
+    animation-name: fade-in;
+    animation-duration: .5s;
+    animation-fill-mode: forwards; 
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: 2rem;
+    row-gap: 2rem;
+}
 
 .input {
     position: relative;
