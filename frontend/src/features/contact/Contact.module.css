@@ -1,0 +1,112 @@
+
+.input {
+    position: relative;
+}
+  
+.input > input {
+    border: none;
+    border-bottom: 1px solid var(--black);
+    margin-bottom: 30px;
+    padding: 10px 0;
+    width: 100%;
+    background: transparent;
+    color: var(--black);
+    font-size: 16px;
+    outline: none;
+}
+
+.input > label {
+    left: 0;
+    position: absolute;
+    top: 0;
+    padding: 10px 0;
+    color: var(--black);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+    font-weight: bold;
+}
+  
+.input > input:focus ~ label,
+.input > input:valid ~ label {
+    left: 0;
+    top: -20px;
+    color: var(--main-blue);
+    font-size: .75rem;
+}
+
+.textarea > textarea {
+    display: block;
+    border: none;
+    border-bottom: 1px solid var(--black);
+    padding: 1rem 0;
+    width: 100%;
+    background: transparent;
+    color: var(--black);
+    font-size: 1rem;
+    outline: none;
+    max-width: 50vw;
+    max-height: 20vh
+}
+
+.textarea > label {
+    display: block;
+    color: var(--black);
+    font-weight: bold;
+}
+
+@keyframes text-to-dark {
+    from {color: var(--black);}
+    to {color: var(--cream);}
+}
+
+.textToDark {
+    animation-name: text-to-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes text-from-dark {
+    from {color: var(--cream);}
+    to {color: var(--black);}
+}
+
+.textFromDark {
+    animation-name: text-from-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes input-to-dark {
+    from {
+        color: var(--black);
+        border-bottom: 1px solid var(--black);
+    }
+    to {
+        color: var(--cream);
+        border-bottom: 1px solid var(--cream);
+    }
+}
+
+.inputToDark {
+    animation-name: input-to-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes input-from-dark {
+    from {
+        color: var(--cream);
+        border-bottom: 1px solid var(--cream);
+    }
+    to {
+        color: var(--black);
+        border-bottom: 1px solid var(--black);
+    }
+}
+
+.inputFromDark {
+    animation-name: input-from-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
