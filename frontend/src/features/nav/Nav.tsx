@@ -12,7 +12,7 @@ const Nav = () => {
   const darkmodeInit = useAppSelector(selectDarkModeInit)
 
   return (
-    <nav>
+    <nav className={styles.nav}>
       <div className={styles.content}>
         <span 
           onClick={() => dispatch(switchPage(NavOptions.work))} 

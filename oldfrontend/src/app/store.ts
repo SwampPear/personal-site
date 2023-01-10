@@ -1,5 +1,5 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
+import counterReducer from '../features/counter/counterSlice'
 import darkModeReducer from '../features/darkmode/darkModeSlice'
 import navReducer from '../features/nav/navSlice'
 
@@ -19,4 +19,4 @@ export type AppThunk<ReturnType = void> = ThunkAction<
   RootState,
   unknown,
   Action<string>
->;
+>

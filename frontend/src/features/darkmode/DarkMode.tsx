@@ -4,7 +4,7 @@ import { useAppDispatch } from '../../app/hooks'
 import { toggle } from './darkModeSlice'
 
 import { useAppSelector  } from '../../app/hooks'
-import { selectDarkModeState, selectDarkModeInit } from '../darkmode/darkModeSlice'
+import { selectDarkModeState, selectDarkModeInit } from './darkModeSlice'
 
 
 const DarkMode = () => {
