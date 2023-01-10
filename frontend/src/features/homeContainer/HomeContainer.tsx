@@ -1,11 +1,11 @@
 import styles from './HomeContainer.module.css'
 
 
-type SectionProps = {
+type HomeContainerProps = {
   children: JSX.Element | JSX.Element[]
 }
 
-const HomeContainer = (props: SectionProps) => {
+const HomeContainer = (props: HomeContainerProps) => {
   return (
     <section className={styles.container}>
         {props.children}
