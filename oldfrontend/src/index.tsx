@@ -7,6 +7,11 @@ import reportWebVitals from './reportWebVitals';
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import './index.css';
 
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom"
+
 const container = document.getElementById('root')!;
 const root = createRoot(container);
 
@@ -15,10 +20,17 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 })
 
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <App/>,
+  },
+])
+
 root.render(
   <Provider store={store}>
     <ApolloProvider client={client}>
-      <App/>
+      <RouterProvider router={router}/>
     </ApolloProvider>
   </Provider>
 );
