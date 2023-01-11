@@ -24,6 +24,22 @@ const makeQuery = (postId: number) => {
   `
 }
 
+type NodeType = {
+  type: string;
+  content: string;
+}
+
+const parseContent = ( node: NodeType) => {
+  if ( node.type === 'paragraph') {
+    return (
+      <TextParagraph>
+        {node.content}
+      </TextParagraph>
+    )
+  }
+}
+
+
 const Blog = () => {
   const dispatch = useAppDispatch()
   const darkmode = useAppSelector(selectDarkModeState)
@@ -33,6 +49,8 @@ const Blog = () => {
 
   if (loading) return <>loading</>
   if (error) return <>error</>
+
+  const blogData = JSON.parse( data.postById.content ).data
 
   return (
     <div className={styles.container}>
@@ -44,7 +62,11 @@ const Blog = () => {
         </TextParagraph>
         <Divider/>
         <TextParagraph>
-            {JSON.stringify(data.postById.content)}
+            {
+              blogData.forEach( ( node: NodeType ) => {
+                return parseContent( node )
+              })
+            }
         </TextParagraph>
     </div>
   )

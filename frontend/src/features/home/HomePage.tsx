@@ -11,6 +11,7 @@ import TextParagraph from '../textparagraph/TextParagraph'
 import Divider from '../divider/Divider';
 
 import { useQuery, gql } from "@apollo/client";
+import Blog from '../blog/Blog';
 
 const QUERY = gql`
   {
@@ -22,7 +23,6 @@ const QUERY = gql`
     }
   }
 `
-
 
 const HomePage = () => {
   const { data, loading, error } = useQuery( QUERY )
@@ -54,6 +54,7 @@ const HomePage = () => {
           making music and performing and I currently play guitar, bass, trombone, tuba and a little keyboard. I'm also trying to 
           pick up the drums.
         </TextParagraph>
+        <Blog/>
       </div>
     </div>
   )

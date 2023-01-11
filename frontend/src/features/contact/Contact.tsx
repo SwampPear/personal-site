@@ -57,6 +57,9 @@ const Contact = () => {
             className={`${darkmodeInit ? (darkmode ? styles.inputToDark : styles.inputFromDark) : ''}`}
           />
         </div>
+        <div className={styles.submitButtonContainer}>
+          <button className={styles.submitButton}>Submit</button>
+        </div>
       </form>                                                                                                                                                                                                                                 
     </div>
   )
