@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from './Posts.module.css'
 import GridContainer from '../gridContainer/GridContainer'
 import img from '../../image.jpeg'
 import Post from '../post/Post'

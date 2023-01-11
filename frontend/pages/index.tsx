@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { useEffect } from 'react'
 
 import HomePage from '../src/features/home/HomePage'
 import Posts from '../src/features/posts/Posts'
@@ -8,6 +9,7 @@ import Base from '../src/features/base/Base'
 
 import { useAppSelector } from '../src/app/hooks'
 import { selectNavPage, NavOptions } from '../src/features/nav/navSlice'
+import { selectDarkModeInit, selectDarkModeState } from '../src/features/darkmode/darkModeSlice' 
 
 
 const handlePage = ( page: NavOptions ) => {
@@ -25,6 +27,21 @@ const handlePage = ( page: NavOptions ) => {
 
 const Home = () => {
   const page = useAppSelector( selectNavPage )
+
+  const darkmode = useAppSelector( selectDarkModeState )
+  const darkmodeInit = useAppSelector( selectDarkModeInit )
+
+  useEffect( () => { 
+    if (darkmodeInit) {
+      if (darkmode) {
+        document.querySelector( 'body' )?.classList.remove( 'bodyFromDark' ) 
+        document.querySelector( 'body' )?.classList.add( 'bodyToDark' ) 
+      } else {
+        document.querySelector( 'body' )?.classList.remove( 'bodyToDark' ) 
+        document.querySelector( 'body' )?.classList.add( 'bodyFromDark' ) 
+      }
+    }
+  }, [darkmode, darkmodeInit])
 
   return (
     <>
