@@ -41,16 +41,10 @@ const parseContent = ( node: NodeType) => {
 
 
 const Blog = () => {
-  const dispatch = useAppDispatch()
-  const darkmode = useAppSelector(selectDarkModeState)
-  const darkmodeInit = useAppSelector(selectDarkModeInit)
-
-  const { data, loading, error } = useQuery( makeQuery(0), { pollInterval: 500 } )
+  const { data, loading, error } = useQuery( makeQuery(3), { pollInterval: 500 } )
 
   if (loading) return <>loading</>
   if (error) return <>error</>
-
-  const blogData = JSON.parse( data.postById.content ).data
 
   return (
     <div className={styles.container}>
@@ -61,13 +55,11 @@ const Blog = () => {
             {`${data.postById.readingTime} minute read`}
         </TextParagraph>
         <Divider/>
-        <TextParagraph>
-            {
-              blogData.forEach( ( node: NodeType ) => {
-                return parseContent( node )
-              })
-            }
-        </TextParagraph>
+        {
+          JSON.parse( data.postById.content ).data.forEach( ( node: NodeType ) => {
+            parseContent( node )
+          })
+        }
     </div>
   )
 }
