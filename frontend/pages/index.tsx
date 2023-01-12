@@ -6,6 +6,7 @@ import Posts from '../src/features/posts/Posts'
 import Works from '../src/features/works/Works'
 import Contact from '../src/features/contact/Contact'
 import Base from '../src/features/base/Base'
+import Copyright from '../src/features/copyright/Copyright'
 
 import { useAppSelector } from '../src/app/hooks'
 import { selectNavPage, NavOptions } from '../src/features/nav/navSlice'
@@ -54,6 +55,7 @@ const Home = () => {
       <main>
         <Base/>
         { handlePage( page ) }
+        <Copyright/>
       </main>
     </>
   )

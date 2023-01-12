@@ -6,6 +6,7 @@ import img from '../../image.jpeg'
 import Post from '../post/Post'
 
 import { useQuery, gql } from '@apollo/client'
+import Copyright from '../copyright/Copyright'
 
 
 const QUERY = gql`

@@ -1,0 +1,30 @@
+.container {
+    width: 100%;
+    padding: 4rem 0;
+    display: flex;
+    justify-content: center;
+    color: var(--black);
+    font-size: .75rem;
+}
+
+@keyframes copyright-to-dark {
+    from {color: var(--black);}
+    to {color: var(--cream);}
+}
+
+.copyrightToDark {
+    animation-name: copyright-to-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes copyright-from-dark {
+    from {color: var(--cream);}
+    to {color: var(--black);}
+}
+
+.copyrightFromDark {
+    animation-name: copyright-from-dark;
+    animation-duration: .3s;
+    animation-fill-mode: forwards; 
+}

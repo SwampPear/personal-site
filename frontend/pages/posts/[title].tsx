@@ -9,6 +9,7 @@ import { selectDarkModeInit, selectDarkModeState } from '../../src/features/dark
 
 import { gql } from "@apollo/client"
 import { client } from '../_app'
+import Copyright from '../../src/features/copyright/Copyright'
 
 
 const allPosts = () => {
@@ -112,6 +113,7 @@ const PostsPage = ({post}: any) => {
           readingTime={post.readingTime}
           content={post.content}
         />
+        <Copyright/>
       </main>
     </>
   )
