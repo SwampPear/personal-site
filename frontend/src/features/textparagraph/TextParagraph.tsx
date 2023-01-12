@@ -6,7 +6,7 @@ import { selectDarkModeState, selectDarkModeInit } from '../darkmode/darkModeSli
 
 
 type TextParagraphProps = {
-  children: string
+  children: string | string[]
 }
 
 const TextParagraph = (props: TextParagraphProps) => {

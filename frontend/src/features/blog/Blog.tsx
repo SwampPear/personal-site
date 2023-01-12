@@ -29,16 +29,16 @@ type NodeType = {
   content: string;
 }
 
+
 const parseContent = ( node: NodeType) => {
   if ( node.type === 'paragraph') {
     return (
       <TextParagraph>
-        {node.content}
+        &emsp;{node.content}
       </TextParagraph>
     )
   }
 }
-
 
 const Blog = () => {
   const { data, loading, error } = useQuery( makeQuery(3), { pollInterval: 500 } )
@@ -56,8 +56,8 @@ const Blog = () => {
         </TextParagraph>
         <Divider/>
         {
-          JSON.parse( data.postById.content ).data.forEach( ( node: NodeType ) => {
-            parseContent( node )
+          JSON.parse( data.postById.content ).data.map( ( node: NodeType ) => {
+            return parseContent( node )
           })
         }
     </div>

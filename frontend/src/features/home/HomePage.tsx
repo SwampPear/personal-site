@@ -54,7 +54,6 @@ const HomePage = () => {
           making music and performing and I currently play guitar, bass, trombone, tuba and a little keyboard. I'm also trying to 
           pick up the drums.
         </TextParagraph>
-        <Blog/>
       </div>
     </div>
   )
