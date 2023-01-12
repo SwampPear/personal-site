@@ -16,7 +16,7 @@ class Post(models.Model):
         choices=POST_TYPE,
         default=POST,
     )
-    title = models.CharField(max_length=127)
+    title = models.CharField(max_length=127, unique=True)
     reading_time = models.IntegerField(default=5)
     content = models.JSONField()
 
