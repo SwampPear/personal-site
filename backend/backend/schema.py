@@ -1,13 +1,19 @@
 import graphene
 from graphene_django import DjangoObjectType
 
-from core.models import Post
+from core.models import Post, Contact
 
 
 class PostType(DjangoObjectType):
     class Meta:
         model = Post
         fields = ('id', 'type', 'title', 'reading_time', 'content')
+
+
+class ContactType(DjangoObjectType):
+    class Meta:
+        model = Contact
+        fields = ('name', 'email', 'content')
 
 
 class Query(graphene.ObjectType):
@@ -25,7 +31,7 @@ class Query(graphene.ObjectType):
 
 
 class PostInput(graphene.InputObjectType):
-    id = graphene.ID()
+    id = graphene.ID(required=False)
     type = graphene.String()
     title = graphene.String()
     reading_time = graphene.Int()
@@ -40,8 +46,7 @@ class CreatePost(graphene.Mutation):
 
     @staticmethod
     def mutate(root, info, post_data=None):
-        post_instance = Post( 
-            id=post_data.id,
+        post_instance = Post(
             type=post_data.type,
             title=post_data.title,
             reading_time=post_data.reading_time,
@@ -92,9 +97,38 @@ class DeletePost(graphene.Mutation):
         return None
 
 
+class ContactInput(graphene.InputObjectType):
+    id = graphene.ID(required=False)
+    name = graphene.String()
+    email = graphene.String()
+    content = graphene.String()
+
+
+class CreateContact(graphene.Mutation):
+    class Arguments:
+        contact_data = ContactInput(required=True)
+
+    contact = graphene.Field(ContactType)
+
+    @staticmethod
+    def mutate(root, info, contact_data=None):
+        contact_instance = Contact(
+            name=contact_data.name,
+            email=contact_data.email,
+            content=contact_data.content
+        )
+
+        contact_instance.save()
+
+        return CreateContact(contact=contact_instance)
+
+
 class Mutation(graphene.ObjectType):
     create_post = CreatePost.Field()
     update_post = UpdatePost.Field()
     delete_post = DeletePost.Field()
+
+    create_contact = CreateContact.Field()
+
 
 schema = graphene.Schema(query=Query, mutation=Mutation)
