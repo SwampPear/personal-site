@@ -5,19 +5,29 @@ import TextHeader from '../textheader/TextHeader';
 import TextParagraph from '../textparagraph/TextParagraph';
 import Divider from '../divider/Divider'
 
-import { useAppSelector, useAppDispatch } from '../../app/hooks'
-import { selectDarkModeState, selectDarkModeInit } from '../darkmode/darkModeSlice'
-
 import { useQuery, gql } from "@apollo/client";
 
 
-const makeQuery = (postId: number) => {
+const getPost = (id: number) => {
   return gql`
     query {
-      postById(postId: ${postId}) {
+      postById(postId: ${id}) {
         postId
         title
         readingTime
+        content
+      }
+    }
+  `
+}
+
+
+const getWork = (id: number) => {
+  return gql`
+    query {
+      workById(workId: ${id}) {
+        workId
+        title
         content
       }
     }
@@ -29,39 +39,64 @@ type NodeType = {
   content: string;
 }
 
-
 const parseContent = ( node: NodeType) => {
   if ( node.type === 'paragraph') {
     return (
       <TextParagraph>
-        &emsp;{node.content}
+        &emsp;&emsp;{node.content}
       </TextParagraph>
     )
   }
 }
 
-const Blog = () => {
-  const { data, loading, error } = useQuery( makeQuery(3), { pollInterval: 500 } )
+type BlogProps = {
+  type: 'works' | 'posts';
+  id: number
+}
 
-  if (loading) return <>loading</>
-  if (error) return <>error</>
+const Blog = (props: BlogProps) => {
+  if (props.type === 'works') {
+    const { data, loading, error } = useQuery( getWork(props.id), { pollInterval: 500 } )
 
-  return (
-    <div className={styles.container}>
-        <TextHeader large={true}>
-            {data.postById.title}
-        </TextHeader>
-        <TextParagraph>
-            {`${data.postById.readingTime} minute read`}
-        </TextParagraph>
-        <Divider/>
-        {
-          JSON.parse( data.postById.content ).data.map( ( node: NodeType ) => {
-            return parseContent( node )
-          })
-        }
-    </div>
-  )
+    if (loading) return <>loading</>
+    if (error) return <>error</>
+
+    return (
+      <div className={styles.container}>
+          <TextHeader large={true}>
+              {data.workById.title}
+          </TextHeader>
+          <Divider/>
+          {
+            JSON.parse( data.workById.content ).data.map( ( node: NodeType ) => {
+              return parseContent( node )
+            })
+          }
+      </div>
+    )
+  } else {
+    const { data, loading, error } = useQuery( getPost(props.id), { pollInterval: 500 } )
+
+    if (loading) return <>loading</>
+    if (error) return <>error</>
+
+    return (
+      <div className={styles.container}>
+          <TextHeader large={true}>
+              {data.postById.title}
+          </TextHeader>
+          <TextParagraph>
+              {`${data.postById.readingTime} minute read`}
+          </TextParagraph>
+          <Divider/>
+          {
+            JSON.parse( data.postById.content ).data.map( ( node: NodeType ) => {
+              return parseContent( node )
+            })
+          }
+      </div>
+    )
+  }
 }
 
 export default Blog

@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import GridContainer from '../gridContainer/GridContainer'
 import img from '../../image.jpeg'
 import Post from '../post/Post'
@@ -28,7 +29,9 @@ const Posts = () => {
       {
         data.allPosts.map((post: any) => {
           return (
-            <Post img={img} title={post.title}/>
+            <Link key={post.postId} href={`/posts/${post.postId}`}>
+              <Post img={img} title={post.title}/>
+            </Link>
           )
         })
       }

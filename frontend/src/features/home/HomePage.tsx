@@ -10,23 +10,8 @@ import TextHeader from '../textheader/TextHeader';
 import TextParagraph from '../textparagraph/TextParagraph'
 import Divider from '../divider/Divider';
 
-import { useQuery, gql } from "@apollo/client";
-import Blog from '../blog/Blog';
-
-const QUERY = gql`
-  {
-    allPosts {
-      postId
-      title
-      readingTime
-      content
-    }
-  }
-`
 
 const HomePage = () => {
-  const { data, loading, error } = useQuery( QUERY )
-
   return (
     <div className={`${styles.container} ${styles.fadeIn}`}>
       <Graphic/>
