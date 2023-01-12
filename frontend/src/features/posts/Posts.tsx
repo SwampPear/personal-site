@@ -30,11 +30,13 @@ const Posts = () => {
     <GridContainer>
       {
         data.allPosts.map((post: any) => {
-          return (
-            <Link className={styles.link} key={post.id} href={`/posts/${post.title}`}>
-              <Post img={img} title={post.title}/>
-            </Link>
-          )
+          if (post.type === 'P') {
+            return (
+              <Link className={styles.link} key={post.id} href={`/posts/${post.title}`}>
+                <Post img={img} title={post.title}/>
+              </Link>
+            )
+          }
         })
       }
     </GridContainer>
