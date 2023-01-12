@@ -1,5 +1,5 @@
-import React from 'react';
 import styles from './Nav.module.css'
+import Link from 'next/link'
 
 import { useAppSelector, useAppDispatch } from '../../app/hooks'
 import { selectDarkModeState, selectDarkModeInit } from '../darkmode/darkModeSlice'
@@ -14,24 +14,30 @@ const Nav = () => {
   return (
     <nav className={styles.nav}>
       <div className={styles.content}>
-        <span 
-          onClick={() => dispatch(switchPage(NavOptions.work))} 
-          className={`${styles.scrollButton} ${darkmodeInit ? (darkmode ? styles.scrollButtonToDark : styles.scrollButtonFromDark) : ''}`}
-        >
-          Work
-        </span>
-        <span 
-          onClick={() => dispatch(switchPage(NavOptions.posts))} 
-          className={`${styles.scrollButton} ${darkmodeInit ? (darkmode ? styles.scrollButtonToDark : styles.scrollButtonFromDark) : ''}`}
-        >
-          Posts
-        </span>
-        <span 
-          onClick={() => dispatch(switchPage(NavOptions.contact))} 
-          className={`${styles.scrollButton} ${darkmodeInit ? (darkmode ? styles.scrollButtonToDark : styles.scrollButtonFromDark) : ''}`}
-        >
-          Contact
-        </span>
+        <Link href='/' className={styles.link}>
+          <span 
+            onClick={() => dispatch(switchPage(NavOptions.work))} 
+            className={`${styles.scrollButton} ${darkmodeInit ? (darkmode ? styles.scrollButtonToDark : styles.scrollButtonFromDark) : ''}`}
+          >
+            Work
+          </span>
+        </Link>
+        <Link href='/' className={styles.link}>
+          <span 
+            onClick={() => dispatch(switchPage(NavOptions.posts))} 
+            className={`${styles.scrollButton} ${darkmodeInit ? (darkmode ? styles.scrollButtonToDark : styles.scrollButtonFromDark) : ''}`}
+          >
+            Posts
+          </span>
+        </Link>
+        <Link href='/' className={styles.link}>
+          <span 
+            onClick={() => dispatch(switchPage(NavOptions.contact))} 
+            className={`${styles.scrollButton} ${darkmodeInit ? (darkmode ? styles.scrollButtonToDark : styles.scrollButtonFromDark) : ''}`}
+          >
+            Contact
+          </span>
+        </Link>
       </div>
     </nav>
   )
