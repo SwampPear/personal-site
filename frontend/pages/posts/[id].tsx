@@ -7,6 +7,34 @@ import Blog from '../../src/features/blog/Blog'
 import { useAppSelector } from '../../src/app/hooks'
 import { selectDarkModeInit, selectDarkModeState } from '../../src/features/darkmode/darkModeSlice' 
 
+import { useQuery, gql } from "@apollo/client";
+
+const allPosts = () => {
+  return gql`
+    query {
+      allPosts {
+        postId
+        title
+        readingTime
+        content
+      }
+    }
+  `
+}
+
+const postByID = (id: number) => {
+  return gql`
+    query {
+      postById(id: ${id}) {
+        postId
+        title
+        readingTime
+        content
+      }
+    }
+  `
+}
+
 
 const PostsPage = () => {
   // darkmode
