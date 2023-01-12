@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useEffect } from 'react'
 
-import Error404 from '../src/features/404/Error404'
+import ErrorPage from '../src/features/errorPage/ErrorPage'
 
 import { useAppSelector } from '../src/app/hooks'
 import { selectDarkModeInit, selectDarkModeState } from '../src/features/darkmode/darkModeSlice' 
@@ -33,7 +33,10 @@ const Error404Page = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Error404/>
+        <ErrorPage
+          error='404'
+          text={`I think you've gotten lost! Let's get you back home.`}
+        />
       </main>
     </>
   )
