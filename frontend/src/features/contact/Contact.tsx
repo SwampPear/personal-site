@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { selectDarkModeState, selectDarkModeInit } from '../darkmode/darkModeSlice'
 import { useAppSelector } from '../../app/hooks'
 
-import { gql, useMutation } from '@apollo/client'
+import { gql } from '@apollo/client'
 import { client } from '../../../pages/_app'
 
 
@@ -29,8 +29,6 @@ const Contact = () => {
   const [ name, setName ] = useState( '' )
   const [ email, setEmail ] = useState( '' )
   const [ content, setContent ] = useState( '' )
-
-  const [ sendDat ] = useMutation( createContact( name, email, content ) )
 
   const sendData = () => {
     client.mutate({
