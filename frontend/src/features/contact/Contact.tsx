@@ -19,7 +19,7 @@ const Contact = () => {
               autoFocus={true} 
               autoCapitalize="none" 
               autoComplete="username"                                                                                                                                                                          
-              maxLength={32} 
+              maxLength={127} 
               required={true}
               className={`${darkmodeInit ? (darkmode ? styles.inputToDark : styles.inputFromDark) : ''}`}
             />
@@ -34,7 +34,7 @@ const Contact = () => {
               autoFocus={true} 
               autoCapitalize="none" 
               autoComplete="email"                                                                                                                                                                          
-              maxLength={64} 
+              maxLength={255} 
               required={true}
               className={`${darkmodeInit ? (darkmode ? styles.inputToDark : styles.inputFromDark) : ''}`}
             />

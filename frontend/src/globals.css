@@ -23,6 +23,14 @@ body {
   background-color: var(--cream);
 }
 
+textarea {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 @keyframes body-to-dark {
   from {background-color: var(--cream);}
   to {background-color: var(--black);}

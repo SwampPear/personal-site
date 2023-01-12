@@ -21,6 +21,21 @@ class Post(models.Model):
     content = models.JSONField()
 
 
+class Contact(models.Model):
+    name = models.CharField(
+        max_length=127,
+        null=False
+    )
+    email = models.CharField(
+        max_length=255,
+        null=False
+    )
+    content = models.CharField(
+        max_length=2047
+        null=False
+    )
+
+
 """
 # content data for testing purposes
 data = {
