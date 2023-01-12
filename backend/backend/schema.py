@@ -1,7 +1,7 @@
 import graphene
 from graphene_django import DjangoObjectType
 
-from core.models import Post, Work
+from core.models import Post
 
 
 class PostType(DjangoObjectType):
@@ -19,7 +19,7 @@ class Query(graphene.ObjectType):
 
     def resolve_post_by_id(root, info, id):
         try:
-            return Post.objects.get(id)
+            return Post.objects.get(id=id)
         except Post.DoesNotExist:
             return None
 

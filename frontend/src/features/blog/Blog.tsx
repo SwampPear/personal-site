@@ -25,7 +25,7 @@ type BlogProps = {
   type: 'works' | 'posts'
   title: string
   readingTime: number
-  content: NodeType[]
+  content: string
 }
 
 const Blog = (props: BlogProps) => {
@@ -39,7 +39,7 @@ const Blog = (props: BlogProps) => {
           </TextParagraph>
         <Divider/>
         {
-          props.content.map( ( node: NodeType ) => {
+          JSON.parse(props.content).map( ( node: NodeType ) => {
             return parseContent( node )
           })
         }

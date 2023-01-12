@@ -11,7 +11,7 @@ POST_TYPE = [
 ]
 
 class Post(models.Model):
-    tpye = models.CharField(
+    type = models.CharField(
         max_length=1,
         choices=POST_TYPE,
         default=POST,

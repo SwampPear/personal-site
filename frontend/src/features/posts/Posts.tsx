@@ -11,7 +11,8 @@ import { useQuery, gql } from '@apollo/client'
 const QUERY = gql`
   query AllPosts {
     allPosts {
-      postId
+      id
+      type
       title
       readingTime
       content
@@ -30,7 +31,7 @@ const Posts = () => {
       {
         data.allPosts.map((post: any) => {
           return (
-            <Link className={styles.link} key={post.postId} href={`/posts/${post.postId}`}>
+            <Link className={styles.link} key={post.id} href={`/posts/${post.id}`}>
               <Post img={img} title={post.title}/>
             </Link>
           )
