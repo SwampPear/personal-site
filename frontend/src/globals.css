@@ -31,6 +31,20 @@ textarea {
   -moz-osx-font-smoothing: grayscale;
 }
 
+div,
+h1,
+h2,
+h3,
+p,
+a,
+span,
+label {
+  -webkit-user-select: none;       
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 @keyframes body-to-dark {
   from {background-color: var(--cream);}
   to {background-color: var(--black);}
