@@ -1,5 +1,7 @@
 import styles from './ErrorPage.module.css'
 import Link from 'next/link'
+import Image from 'next/image'
+import img from '../../404-test.png'
 
 
 type ErrorPageProps = {
@@ -23,7 +25,9 @@ const ErrorPage = (props: ErrorPageProps) => {
             </Link>
         </div>
       </div>
-      <div className={styles.animationContainer}></div>
+      <div className={styles.animationContainer}>
+        <Image className={styles.testImage} src={img} alt=''/>
+      </div>
     </section>
   )
 }

@@ -50,5 +50,12 @@
 .animationContainer {
     width: 60vw;
     height: 100vh;
-    background-color: purple;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testImage {
+    width: 20vw;
+    height: auto;
 }
