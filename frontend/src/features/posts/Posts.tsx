@@ -31,7 +31,7 @@ const Posts = () => {
       {
         data.allPosts.map((post: any) => {
           return (
-            <Link className={styles.link} key={post.id} href={`/posts/${post.id}`}>
+            <Link className={styles.link} key={post.id} href={`/posts/${post.title}`}>
               <Post img={img} title={post.title}/>
             </Link>
           )
