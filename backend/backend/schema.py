@@ -32,9 +32,16 @@ class Query(graphene.ObjectType):
 
     # Contact
     all_contacts = graphene.List(ContactType)
+    contact_by_id = graphene.Field(ContactType, id=graphene.ID(required=True))
 
     def resolve_all_contacts(root, info):
         return Contact.objects.all()
+
+    def resolve_contact_by_id(root, info, id):
+        try:
+            return Contact.objects.get(pk=id)
+        except Contact.DoesNotExist:
+            return None
 
 
 class PostInput(graphene.InputObjectType):
