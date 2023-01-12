@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './Posts.module.css'
 import Link from 'next/link'
 import GridContainer from '../gridContainer/GridContainer'
 import img from '../../image.jpeg'
@@ -29,7 +30,7 @@ const Posts = () => {
       {
         data.allPosts.map((post: any) => {
           return (
-            <Link key={post.postId} href={`/posts/${post.postId}`}>
+            <Link className={styles.link} key={post.postId} href={`/posts/${post.postId}`}>
               <Post img={img} title={post.title}/>
             </Link>
           )
