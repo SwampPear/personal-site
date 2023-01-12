@@ -3,6 +3,7 @@ import styles from './Header.module.css'
 import Icon from '../icon/Icon'
 import DarkMode from '../darkmode/DarkMode' 
 import GithubLink from '../githublink/GithubLink'
+import LinkedInLink from '../linkedinLink/LinkedInLink'
 
 import { useAppSelector, useAppDispatch } from '../../app/hooks'; 
 import { selectDarkModeState, selectDarkModeInit } from '../darkmode/darkModeSlice';
@@ -26,6 +27,7 @@ const Header = () => {
         </div>
       </Link>
       <div className={styles.brand}>
+        <LinkedInLink/>
         <GithubLink/>
         <DarkMode/>
       </div>

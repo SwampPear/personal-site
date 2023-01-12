@@ -17,6 +17,26 @@ const parseContent = ( node: NodeType) => {
         &emsp;&emsp;{node.content}
       </TextParagraph>
     )
+  } else
+  if ( node.type === 'large-header') {
+    return (
+      <TextHeader large={true}>
+        {node.content}
+      </TextHeader>
+    )
+  } else
+  if ( node.type === 'small-header') {
+    return (
+      <TextHeader large={true}>
+        {node.content}
+      </TextHeader>
+    )
+  } else {
+    if ( node.type === 'divider') {
+      return (
+        <Divider/>
+      )
+    }
   }
 }
 
