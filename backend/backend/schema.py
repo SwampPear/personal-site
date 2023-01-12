@@ -13,10 +13,11 @@ class PostType(DjangoObjectType):
 class ContactType(DjangoObjectType):
     class Meta:
         model = Contact
-        fields = ('name', 'email', 'content')
+        fields = ('id', 'name', 'email', 'content')
 
 
 class Query(graphene.ObjectType):
+    # Post
     all_posts = graphene.List(PostType)
     post_by_title = graphene.Field(PostType, title=graphene.String(required=True))
 
@@ -28,6 +29,12 @@ class Query(graphene.ObjectType):
             return Post.objects.get(title=title)
         except Post.DoesNotExist:
             return None
+
+    # Contact
+    all_contacts = graphene.List(ContactType)
+
+    def resolve_all_contacts(root, info):
+        return Contact.objects.all()
 
 
 class PostInput(graphene.InputObjectType):
