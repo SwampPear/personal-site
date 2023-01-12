@@ -1,8 +1,21 @@
 from django.db import models
 
 
+# post type enumeration
+POST = 'P'
+WORK = 'W'
+
+POST_TYPE = [
+    (WORK, 'work'),
+    (POST, 'post')
+]
+
 class Post(models.Model):
-    postId = models.AutoField(primary_key=True)
+    tpye = models.CharField(
+        max_length=2,
+        choices=POST_TYPE,
+        default=POST,
+    )
     title = models.CharField(max_length=127)
     reading_time = models.IntegerField(default=5)
     content = models.JSONField()
