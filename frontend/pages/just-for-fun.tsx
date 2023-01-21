@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-const JustForFun = () => {
+const JustForFunPage = () => {
   return (
     <>
       <Head>
@@ -17,4 +17,4 @@ const JustForFun = () => {
   )
 }
 
-export default JustForFun
+export default JustForFunPage
