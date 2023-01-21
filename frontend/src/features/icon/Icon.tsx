@@ -1,6 +1,6 @@
 import styles from './Icon.module.css'
 import Image from 'next/image'
-import img from '../../donut-icon.svg'
+import img from '../../swamp-pear.svg'
 
 
 const Icon = () => {
