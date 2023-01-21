@@ -1,7 +1,8 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import styles from './justForFun.module.css'
 
 import * as THREE from 'three'
+
 
 const JustForFun = () => {
     const mountRef = useRef<HTMLDivElement>(null)
@@ -12,16 +13,28 @@ const JustForFun = () => {
   
       // setup camera
       let camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 )
-      camera.position.z = 100
+      camera.position.z = 1
   
       // setup rendered
       let renderer = new THREE.WebGLRenderer( { alpha: true, antialias: true } )
       renderer.setSize( window.innerWidth, window.innerHeight )
-      renderer.setClearColor( 0x000000, 1 )
+      renderer.setClearColor( 0x000000, 0.5 )
       renderer.setPixelRatio( window.devicePixelRatio )
       
       // append to container div
       mountRef.current!.appendChild( renderer.domElement )
+
+      const map = new THREE.TextureLoader().load( '../../sprite.png' )
+      const material = new THREE.SpriteMaterial( { map: map } )
+
+      
+
+      const sprite = new THREE.Sprite( material )
+      sprite.scale.set( 1, 2, 1 )
+      sprite.position.set( 0, 1, 0 )
+      scene.add( sprite )
+
+      renderer.render( scene, camera )
   
       /*
       // define and add blob
@@ -65,6 +78,7 @@ const JustForFun = () => {
         material.uniforms['mouseY'].value = event.screenY
       })
       */
+
     }, [])
     
     return (
