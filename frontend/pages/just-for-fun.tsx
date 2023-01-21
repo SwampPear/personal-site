@@ -1,5 +1,7 @@
 import Head from 'next/head'
 
+import JustForFun from '../src/features/justForFun/justForFun'
+
 const JustForFunPage = () => {
   return (
     <>
@@ -11,7 +13,7 @@ const JustForFunPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        
+        <JustForFun/>
       </main>
     </>
   )
