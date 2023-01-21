@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import styles from './JustForFun.module.css'
+import styles from './JustForFunGame.module.css'
 
 import * as THREE from 'three'
 
-const JustForFun = () => {
+const JustForFunGame = () => {
   const mountRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const JustForFun = () => {
 
     var renderer = new THREE.WebGLRenderer( { alpha: true, antialias: true } )
     renderer.setSize( window.innerWidth, window.innerHeight )
-    renderer.setClearColor( 0x000000, 0 )
+    renderer.setClearColor( 0x000000, .5 )
     renderer.setPixelRatio( window.devicePixelRatio )
     
     mountRef.current!.appendChild( renderer.domElement )
@@ -32,7 +32,7 @@ const JustForFun = () => {
     var treematerial = new THREE.SpriteMaterial( { map: treetexture } ); 
     var treesprite = new THREE.Sprite( treematerial );
 
-    treesprite.scale.set( 100, 100, 100);
+    treesprite.scale.set( 200, 200, 200);
     treesprite.position.set(0, 1, 0);
     scene.add(treesprite);
   
@@ -51,4 +51,4 @@ const JustForFun = () => {
   );
 }
 
-export default JustForFun
+export default JustForFunGame

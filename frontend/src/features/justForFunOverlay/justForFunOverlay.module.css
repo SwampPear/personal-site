@@ -1,0 +1,49 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+}
+
+.settingsContainer {
+    padding: 1.5rem 2rem .5rem 2rem;
+    font-family: 'VT323';
+    font-size: 2rem;
+    display: flex;
+}
+
+.homeLink {
+    text-decoration: none;
+    color: #fff;
+}
+
+.controlButton {
+    color: #fff;
+    margin-left: 1.5rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.controlsContainerOpen {
+    display: block;
+}
+
+.controlsContainerClosed {
+    display: none !important;
+}
+
+.controlsContainer {
+    padding: 0 2rem;
+    font-family: 'VT323';
+    font-size: 2rem;
+    display: flex;
+}
+
+.controlsList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    color: #fff;
+}
