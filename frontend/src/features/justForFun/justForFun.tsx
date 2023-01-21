@@ -27,7 +27,7 @@ const JustForFun = () => {
       // define and add blob
       const material = new THREE.ShaderMaterial( {
           uniforms: {
-            time: { // float initialized to 0
+            time: { // float initialized to k
               value: 0.0
             },
             mouseY: {
