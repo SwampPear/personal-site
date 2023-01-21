@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import styles from './JustForFunGame.module.css'
 
 import * as THREE from 'three'
+import { text } from 'node:stream/consumers';
 
 const JustForFunGame = () => {
   const mountRef = useRef<HTMLDivElement>(null)
@@ -24,20 +25,39 @@ const JustForFunGame = () => {
     
     mountRef.current!.appendChild( renderer.domElement )
 
-    // testing
     const loader = new THREE.TextureLoader();
-    var treetexture = loader.load( 'assets/sprite.png' );
-    treetexture.magFilter = THREE.NearestFilter;
+    let texture = loader.load( 'assets/sprite.png' );
+    texture.mageFilter = THREE.NearestFilter;
 
-    var treematerial = new THREE.SpriteMaterial( { map: treetexture } ); 
-    var treesprite = new THREE.Sprite( treematerial );
+    let currentTile = 0
+    const tilesHorizontal = 1
+    const tilesVertical = 6
 
-    treesprite.scale.set( 200, 200, 200);
-    treesprite.position.set(0, 1, 0);
-    scene.add(treesprite);
+    texture.repeat.set(1/tilesHorizontal, 1/tilesVertical)
+    texture.offset.x = 0
+    texture.offset.y = 5/6
+    let currentOffset = 5
+
+    let material = new THREE.SpriteMaterial( { map: texture } ); 
+    let sprite = new THREE.Sprite( material );
+
+    sprite.scale.set( 200, 200, 200);
+    sprite.position.set(0, 1, 0);
+    scene.add(sprite);
   
     const animate = () => {
-      requestAnimationFrame(animate)
+      setTimeout(() => {
+        requestAnimationFrame(animate);
+      }, 1000 / 8)
+
+      if (currentOffset === 0) {
+        currentOffset = 5
+      } else {
+        currentOffset--
+      }
+
+      texture.offset.y = currentOffset/6
+
     
       renderer.render( scene, camera )
     }
