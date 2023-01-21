@@ -12,7 +12,7 @@ const Icon = () => {
   const darkmodeInit = useAppSelector(selectDarkModeInit)
 
   return (
-    <a href="https://github.com/MVaden0">
+    <a href="https://github.com/SwampPear">
       <svg 
       className={`${styles.icon} ${darkmodeInit ? (darkmode ? styles.iconToDark : styles.iconFromDark) : ''}`} 
       xmlns="http://www.w3.org/2000/svg" 
