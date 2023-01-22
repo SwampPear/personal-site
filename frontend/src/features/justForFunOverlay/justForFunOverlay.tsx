@@ -3,8 +3,12 @@ import styles from './JustForFunOverlay.module.css'
 
 import Link from 'next/link'
 
+import { useAppDispatch } from '../../app/hooks'
+import { switchPage, NavOptions } from '../nav/navSlice'
+
 
 const JustForFunOverlay = () => {
+  const dispatch = useAppDispatch()
   const [controlsOpen, setControlsOpen] = useState(false)
   const [audio, setAudio] = useState<HTMLAudioElement>()
   const [playing, setPlaying] = useState(false)
@@ -35,7 +39,13 @@ const JustForFunOverlay = () => {
     <div className={styles.container}>
         <div className={styles.settingsContainer}>
             <Link href='/' className={styles.homeLink}>
-              Home
+              <span onClick={() => {
+                setPlaying(false)
+                audio?.pause()
+                dispatch(switchPage(NavOptions.home))
+              }}>
+                Home
+              </span>
             </Link>
             <div onClick={() => setControlsOpen(!controlsOpen)} className={styles.controlButton}>
               Controls

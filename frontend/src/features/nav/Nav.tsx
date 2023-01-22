@@ -38,6 +38,13 @@ const Nav = () => {
             Contact
           </span>
         </Link>
+        <Link href='/fun-mode' className={styles.link}>
+          <span 
+            className={`${styles.scrollButton} ${darkmodeInit ? (darkmode ? styles.scrollButtonToDark : styles.scrollButtonFromDark) : ''}`}
+          >
+            Fun Mode
+          </span>
+        </Link>
       </div>
     </nav>
   )
