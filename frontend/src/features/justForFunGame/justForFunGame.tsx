@@ -28,11 +28,14 @@ const JustForFunGame = () => {
     const loader = new THREE.TextureLoader();
 
     let sprite = new SpriteFlipbook({
+      animations: 4,
       frames: 6,
-      texturePath: 'assets/sprite.png',
+      texturePath: 'assets/PearSpriteSheet.png',
       loader: loader,
       scene: scene
     })
+
+    sprite.switchAnimation(3)
   
     const animate = () => {
       setTimeout(() => {

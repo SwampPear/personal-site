@@ -2,6 +2,7 @@ import * as THREE from 'three'
 
 
 interface ISpriteFlipbook {
+    animations: number
     frames: number
     texturePath: string
     loader: any
@@ -9,17 +10,19 @@ interface ISpriteFlipbook {
 }
 
 export default class SpriteFlipbook {
+    animations: number
     frames: number
     currentOffset: number
     texture: any
 
     constructor(options: ISpriteFlipbook) {
+        this.animations = options.animations
         this.frames = options.frames
         this.currentOffset = this.frames - 1
 
         this.texture = options.loader.load( options.texturePath )
         this.texture.magFilter = THREE.NearestFilter
-        this.texture.repeat.set( 1, 1 / this.frames )
+        this.texture.repeat.set( 1 / this.animations, 1 / this.frames )
         this.texture.offset.x = 0
         this.texture.offset.y = this.currentOffset / this.frames
 
@@ -37,7 +40,16 @@ export default class SpriteFlipbook {
             this.currentOffset--
         }
 
-        this.texture.offset.y = this.currentOffset / 6
+        this.texture.offset.y = this.currentOffset / this.frames
+    }
+
+    switchAnimation = (animation: number) => {
+        if (animation >= 0 && animation < this.animations) {
+            this.currentOffset = this.frames - 1
+            this.texture.offset.y = this.currentOffset / this.frames
+
+            this.texture.offset.x = animation / this.animations
+        }
     }
 }
 
