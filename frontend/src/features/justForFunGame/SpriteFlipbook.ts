@@ -7,6 +7,9 @@ interface ISpriteFlipbook {
     texturePath: string
     loader: any
     scene: any
+    x: number
+    y: number
+    z: number
 }
 
 export default class SpriteFlipbook {
@@ -30,7 +33,7 @@ export default class SpriteFlipbook {
         let material = new THREE.SpriteMaterial( { map: this.texture } )
         this.sprite = new THREE.Sprite( material )
         this.sprite.scale.set( 200, 200, 200 )
-        this.sprite.position.set( 0, 0, 0 )
+        this.sprite.position.set( options.x, options.y, options.z )
         options.scene.add( this.sprite )
     }
 

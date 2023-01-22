@@ -50,10 +50,26 @@ const JustForFunGame = () => {
 
     for (let i = -10; i < 20; i++) {
       for (let j = -10; j < 20; j++) {
-        let water = new THREE.Sprite( waterMaterial )
-        water.scale.set( 200, 200, 200 )
-        water.position.set( (i * 200), (j * 200), 0 )
-        scene.add( water )
+        let water = new SpriteFlipbook({
+          animations: 1,
+          frames: 8,
+          texturePath: 'assets/Water.png',
+          loader: loader,
+          scene: scene,
+          x: (i * 200),
+          y: (j * 200),
+          z: 0
+        })
+
+        const animateSprite = () => {
+          setTimeout(() => {
+            requestAnimationFrame(animateSprite)
+          }, 1000 / 16)
+    
+          water.update()
+        }
+    
+        animateSprite()
       }
     }
 
@@ -72,7 +88,10 @@ const JustForFunGame = () => {
       frames: 6,
       texturePath: 'assets/PearSpriteSheet.png',
       loader: loader,
-      scene: scene
+      scene: scene,
+      x: 0,
+      y: 0,
+      z: 0
     }))
 
     const animate = () => {
